@@ -1,0 +1,3 @@
+<jsp:useBean id="divers" class="Modele.Divers" scope="request">
+	<jsp:setProperty name="divers" property="*"/>
+</jsp:useBean>

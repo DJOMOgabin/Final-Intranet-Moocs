@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration
+PUBLIC "-//Hibernate/Hibernate Mappping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.drive_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/intranet_mooc?createDatabaseIfNotExist=true</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.archive.autodetection">class</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<mapping class="Modele.Epreuve"/>
+		<mapping class="Modele.Point"/>
+		<mapping class="Modele.CopieEtudiant"/>
+		<mapping class="Modele.Reponse"/>
+		<mapping class="Traitement.ReponseQuestion"/>
+		<mapping class="Traitement.ExerciceEntier"/>
+		<mapping class="Traitement.EnonceExercice"/>
+		<mapping class="Traitement.Question"/>
+		<mapping class="Traitement.Proposition"/>
+		<mapping class="Traitement.Duree"/>
+	</session-factory>
+</hibernate-configuration>

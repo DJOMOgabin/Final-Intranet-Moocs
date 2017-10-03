@@ -1,0 +1,144 @@
+body {
+background-color: #ffffff;
+font-family: sophia;
+}
+@font-face{
+	font-family: sophia; 
+	src: url('font/Sofia-Regular.otf');
+}
+.carousel-inner {
+border-radius: 10px 10px 10px 10px;
+}
+.header{
+	margin-bottom: 5px;
+}
+.footer{
+	font-size: 10px;
+	font-style: normal;
+	font-familly: arial;
+}
+.menuA>li>label>h5{
+    padding-left: 0.25px;
+    margin-left: 0.25px;
+    color: #5bc0de;
+    
+}    
+.templatemo-input-icon-container {
+    position: relative;
+}
+.templatemo-contact-form-1 .templatemo-input-icon-container .fa {
+color: rgb(197,197,197);
+left: 12px;
+top: 12px;
+}
+.templatemo-contact-form-1 .fa {
+font-size: 20px;
+}
+.templatemo-input-icon-container .fa {
+color: gray;
+position: absolute;
+left: 10px;
+top: 10px;
+}
+.fa {
+font-size: 16px;
+}
+.templatemo-contact-form-1 input.form-control {
+height: 45px;
+}
+.templatemo-contact-form-1 .form-control {
+background-color: rgba(0, 0, 0, 0.6);
+border: 1px solid rgba(176, 176, 176, 0.4);
+color: white;
+}
+.templatemo-contact-form-1 .form-control {
+font-size: 16px;
+padding: 10px 12px 10px 35px;
+}
+.templatemo-input-icon-container input, .templatemo-input-icon-container textarea {
+padding-left: 30px;
+}
+.menuA>li>ul>li> a:hover{
+    background-color: #5bc0de;
+    color: #ffffff;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    text-decoration: none;
+    
+}
+.menuA>li{
+    border-bottom: 1px solid #e3e3e3;
+    border-radius: 4px;
+    padding-left: 10px;
+    text-decoration: none;     
+}
+
+.nav-pills > li > a:hover,
+.nav-pills > li > a:active,
+.nav-pills > li > a:focus{
+	
+    border: 1px solid rgb(51, 122, 183);
+    border-radius: 4px;
+}
+.nav-list > li > a
+
+#comment{
+	background-image: url('/Symfony/web/images/2.jpg');
+}
+.panel-heading{
+	background-color:#73a839;
+}
+.jumbotron{
+	background-image: url('/Symfony/web/images/2.jpg');
+	color: #ffffff;
+	border-color: transparent;
+	border-style: none;
+	margin-left: 5px;
+	margin-right: 5px;
+	
+	
+}
+.jumbotron p{
+	color: #ffffff;
+}
+
+
+/*Customize the menu
+-----------------------------------*/
+#connexion
+{
+    font-size: 12px;
+}
+i
+{
+    font-size: 20px;
+}
+li{
+    margin-left: 1px;
+    padding-left: 1px;
+    font-size: 12px;
+}
+
+#menu
+{
+    size: 1;
+        
+}
+.well
+{
+	background-color: white;
+}
+
+.navbar{
+background-color: #ffffff;
+border-color: #ffffff;
+
+}
+#foot{
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+fieldset{
+	border: 1px #blue;
+}

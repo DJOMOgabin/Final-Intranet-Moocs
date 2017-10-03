@@ -1,0 +1,6 @@
+<jsp:useBean id="userMoocs" scope="application" class="Modele.User">
+	
+	<jsp:setProperty name="userMoocs" property="email" value="loginEmail"/>
+	<jsp:setProperty name="userMoocs" property="password" value="password"/>
+	
+</jsp:useBean>	

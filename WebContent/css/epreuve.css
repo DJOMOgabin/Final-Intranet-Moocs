@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+.note
+{
+	position: fixed;
+}
+
+body  
+{
+	font-family:"Times New Roman" Arial Serif ;
+    background-color: white;
+   
+}
+
+.titre
+{
+	font-size: 2.2em;
+	font-style: inherit;
+	margin-left:center;
+	text-decoration: underline;
+	text-align: center;	
+}
+
+.exercice
+{
+	font-size: 1.5em;
+	font-style: inherit;
+	text-decoration: blink;
+	text-align: left;
+	
+}
+
+.comment
+{
+	text-align: center;
+	margin-left: 5%;
+	margin-top:2%;
+}
+
+.indicative
+{
+	text-align: center;
+	text-decoration: blink;
+}
+
+.proposition
+{
+	padding-left: 4%;
+	font-style: inherit;
+}
+
+.enonce
+{
+	margin-left: 2%;
+}
+
+fieldset
+{
+	padding: 2%;
+	border: ridge orange;
+}
+

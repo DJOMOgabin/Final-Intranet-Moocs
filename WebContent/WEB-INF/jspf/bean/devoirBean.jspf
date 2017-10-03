@@ -1,0 +1,3 @@
+<jsp:useBean id="devoirBean" scope="session" class="Modele.DevoirBean">
+
+</jsp:useBean>	
