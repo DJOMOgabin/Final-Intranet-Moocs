@@ -7,9 +7,6 @@ var current = currentLocation.substring(currentLocation.indexOf("/",10),currentL
 current = current.substring(0,current.indexOf("/",3));
 var chemin = current+'/';
 currentLocation = 'ws'+currentLocation.substring(currentLocation.indexOf(":",0),currentLocation.indexOf("/",9))+"/"+chemin;
-/*currentLocation = 'ws'+currentLocation.substring(currentLocation.indexOf(":",0),currentLocation.lastIndexOf("/"));
-currentLocation = currentLocation.substring(0,currentLocation.indexOf("/",3)+"/";
-*/
 var websocket = new WebSocket(currentLocation+"echange ");
 	function forumenvoi(id,cours,theme){
 		if($("#text").val()!=''){
