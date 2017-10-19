@@ -1,0 +1,3 @@
+<jsp:useBean id="Quiz" scope="application" class="Modele.Quiz">
+	<jsp:setProperty name="Quizes" property="*"/>
+</jsp:useBean>

@@ -1,0 +1,8 @@
+<jsp:useBean id="connecteurForum" scope="application" class="forum.ConnecteurForum">
+
+	<jsp:setProperty name="connecteurForum" property="driver" value="com.mysql.jdbc.Driver"/>
+	<jsp:setProperty name="connecteurForum" property="chaineConnexion" value="jdbc:mysql:///intranet_mooc"/>
+	<jsp:setProperty name="connecteurForum" property="login" value="root"/>
+	<jsp:setProperty name="connecteurForum" property="password" value="root"/>
+
+</jsp:useBean>

@@ -1,0 +1,3 @@
+<jsp:useBean id="courMoocs" scope="session" class="Modele.Cours">
+	<jsp:setProperty name="courMoocs" property="*"/>
+</jsp:useBean>

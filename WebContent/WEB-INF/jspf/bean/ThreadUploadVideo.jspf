@@ -1,0 +1,6 @@
+<jsp:useBean id="threadUploadVideo" class="Modele.ThreadUploadVideo" scope="request">
+	
+	
+	<jsp:setProperty name="threadUploadVideo" property="*"/>
+	
+</jsp:useBean>

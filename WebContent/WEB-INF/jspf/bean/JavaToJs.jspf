@@ -1,0 +1,3 @@
+<jsp:useBean id="javaToJs" class="Modele.JavaToJs" scope="request">
+	<jsp:setProperty name="javaToJs" property="*"/>
+</jsp:useBean>

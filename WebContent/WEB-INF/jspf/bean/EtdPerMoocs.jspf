@@ -1,0 +1,3 @@
+<jsp:useBean id="etdPerMoocs" class="Modele.EtdPerMoocs" scope="request">
+	<jsp:setProperty name="etdPerMoocs" property="*"/>
+</jsp:useBean>

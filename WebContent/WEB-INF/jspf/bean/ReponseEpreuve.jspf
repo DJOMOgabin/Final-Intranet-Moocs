@@ -1,0 +1,3 @@
+<jsp:useBean id="reponse" scope="application" class="Modele.Reponse">
+	<jsp:setProperty name="reponse" property="*"/>
+</jsp:useBean>	

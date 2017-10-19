@@ -1,0 +1,3 @@
+<jsp:useBean id="question" scope="session" class="Modele.Epreuve">
+	<jsp:setProperty name="question" property="titre" value="titre"/>
+</jsp:useBean>	
