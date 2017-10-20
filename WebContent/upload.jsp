@@ -36,6 +36,7 @@
 	Cours cours = new Cours(); 
 	cours.setTitreCours(title);
 	courMoocs.setTitreCours(title);
+	// onsubmit="nom()"
 %>
 <body class="hold-transition skin-blue sidebar-mini">
 	<%@include file="entete_e.jsp" %>
@@ -55,17 +56,19 @@
 				<div class="box box-info">
 				
 					<!-- FORMULAIRE -->
-					<form id="newcourse" action="uploadDevoir.jsp?title=<%=title%>" method="post" class="form-horizontal" enctype="multipart/form-data">
+					<form id="newcourse" action="uploadDevoir.jsp?title=<%=title%>" method="post" 
+					class="form-horizontal" enctype="multipart/form-data" onsubmit="return nom(escape('<%=title%>'))">
 						<div class="box-body">
 							<div class="form-group">
 								<label for="titre" class="col-sm-2 control-label">TITRE DU DEVOIR</label>
 								<div class="col-sm-3">
-									<!--input type="text" autofocus required onkeypress="" class="form-control" name="titre" id="titre" placeholder="TITRE DU DEVOIR ... "-->
+									<input type="text" formmethod="get" autofocus required onkeypress="" 
+									class="form-control" id="titre" placeholder="TITRE DU DEVOIR ... ">
 									<span class="succes"></span>
                   				</div>
                					<label for="fichier" class="col-sm-2 control-label">Sélectionner Fichier</label>
                					<div class="col-sm-3">
-                    				<input type="file" <%@include file="Enseignant/acceptFichier.jsp" %> required multiple class="form-control" name="fichier"/>
+                    				<input type="file" <%@include file="Enseignant/acceptFichier.jsp" %> required class="form-control" name="fichier"/>
                   				</div>
                   			</div>
 				  		</div>           
@@ -122,6 +125,11 @@ $("#newcourse").submit(function(e){
 	$("#go").hide();
 	$("#none").show();
 });
+	function nom(title){
+	    var title = unescape(title);
+	    $("#newcourse").attr("action","uploadDevoir.jsp?title="+title+"&titre="+$("#titre").val());
+	    return true;
+	}
 </script>
 
 </body>

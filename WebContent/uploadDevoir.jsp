@@ -21,7 +21,6 @@ while(itr.hasNext()){
 		FileItem item = (FileItem)itr.next();
 		File savedFile=null,uploadDir=null;
 		if(item.isFormField()){
-			System.out.println("comment je dois faire pour que ça s'arrête?");
 			return; 
 		}else{
 			if(!item.getName().equals("")){

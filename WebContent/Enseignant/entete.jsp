@@ -119,14 +119,13 @@
     </section>
 
   </aside>
-  		    <%Cours c = new Cours(); %>
-			<%courMoocs.setTitreCours(request.getParameter("title"));%>
-			<%System.out.println("valeur : "+courMoocs.getTitreCours());
-			if(request.getParameter("title")==null){ %>
-			<%c.setTitreCours(courMoocs.getTitreCours()); %>
-			<%}else{ %>
-			<%c.setTitreCours(new String(request.getParameter("title").getBytes("ISO-8859-1"),"UTF-8")); %>
-			<%}%>
+  		    <%//Cours c = new Cours(); %>
+			<%courMoocs.setTitreCours(request.getParameter("title"));
+			/*if(request.getParameter("title")==null){
+				c.setTitreCours(courMoocs.getTitreCours());
+			}else{
+				c.setTitreCours(new String(request.getParameter("title").getBytes("ISO-8859-1"),"UTF-8"));
+			}*/%>
   <div class="content-wrapper">
    <section class="content-header">
       <h1>

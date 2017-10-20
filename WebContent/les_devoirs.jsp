@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 </head>
 <%
-	if(request.getParameter("title")!=null || request.getAttribute("title")!=null){
+	/*if(request.getParameter("title")!=null || request.getAttribute("title")!=null){
 		String title = request.getParameter("title");
 		Upload.setToast(false);
 		if(title==null){
@@ -49,14 +49,12 @@
 		}
 		Cours cours = new Cours(); 
 		cours.setTitreCours(title);
-		courMoocs.setTitreCours(title);
+		courMoocs.setTitreCours(title);*/
+		Cours cours = courMoocs;
 %>
 <body class="hold-transition skin-blue sidebar-mini">
 	<%@include file="entete_e.jsp" %>      
       <section class="content">
-      
-		<%;//Devoirs.EffacerDevoir(request.getParameter("title"),false);%>
-		
 		<div class="row">
 	      	<div class="col-md-6 col-sm-6 col-xs-6">
 	      		<a href="upload.jsp?title=<%=request.getParameter("title")%>"  class="btn btn-info btn-block btn-flat" id="upload"> Envoyer un nouveau devoir  <i class="fa fa-book"></i> <i class="fa fa-plus-circle"></i></a>
@@ -223,4 +221,4 @@ $().toastmessage('showSuccessToast','Votre devoir a été soumis avec success!');
 
 </html>
 <%} %>
-<%} %>
+<%//} %>

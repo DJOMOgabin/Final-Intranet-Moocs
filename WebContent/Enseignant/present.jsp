@@ -37,14 +37,7 @@
 <body class="hold-transition skin-blue sidebar-mini">	
 	<%@ include file="entete.jsp" %>
 <%
-System.out.println(request.getParameter("title"));
 Cours cours = courMoocs;
-System.out.println("titre du cours : "+courMoocs.getTitreCours());
-	if(request.getParameter("title")!=null)
-	{
- 
-		//String title = request.getParameter("title");
-	}
 %>
 	 <section class="content">
      	<!-- Presentation du titre et du logo -->
