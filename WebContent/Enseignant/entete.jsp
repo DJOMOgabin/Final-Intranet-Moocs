@@ -89,8 +89,8 @@
         </li>
         
          <li>
-          <a href="listeDevoir.jsp?title=<%= request.getParameter("title")%>&del=false">
-            <i class="fa fa-book"></i>
+          <a href="listeDevoir.jsp?title=<%= request.getParameter("title")%>&del=false&admin=">
+            <i class="fa fa-edit"></i>
             <span>Les devoirs </span>         	
             <%
             	Devoirs devoir = new Devoirs(request.getParameter("title"),false,true);

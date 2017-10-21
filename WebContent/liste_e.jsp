@@ -6,7 +6,7 @@
 
 <%@ include file = "WEB-INF/jspf/bean/connecteurforum.jspf"%>
 <%@ page import = "java.util.ArrayList,java.sql.Timestamp,java.sql.Time, Modele.CopieEtudiant,
-Modele.Cours, Modele.constante,Modele.Examen,Modele.Epreuve,Controleur.RechercheCopie" %>
+Modele.Cours, Modele.constante,Modele.Examen,Modele.Epreuve,Controleur.RechercheCopie,Modele.Devoirs" %>
 <!DOCTYPE html>
 <html lang="en">
 <%

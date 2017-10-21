@@ -4,17 +4,13 @@
 <%@ include file = "WEB-INF/jspf/bean/courMoocs.jspf" %>
 
 <%@ include file = "WEB-INF/jspf/bean/connecteurforum.jspf"%>
-<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante" %>
+<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante,Modele.Devoirs" %>
 <!DOCTYPE html>
 <html lang="en">
 <%
-	if(request.getParameter("title")!=null)
-	{
-		
 		String title = request.getParameter("title");
-		Cours cours = new Cours(); 
-		cours.setTitreCours(title);
 		courMoocs.setTitreCours(title);
+		Cours cours = courMoocs; 
 %>
 <head>
   <meta charset="utf-8">
@@ -40,6 +36,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
     <%if(session.getAttribute("user")!=null){%>
 		<%@ include file="entete_e.jsp" %>
+		<% System.out.println("Pourquoi ça fait ça?"); %>
 	<%}else{ %>
 		<%@ include file="enteteAperçu.jsp"%>
 	<%} %>
@@ -72,7 +69,7 @@
                </article>
         	      Le lien d'&eacute;valuation de ce cours est <a href="<%=cours.getLienCoursBD()%>" target="blank"><%=cours.getLienCoursBD()%></a>
 				<br><br>
-				<a type="button" class="evaluation btn btn-info btn-flat" href="liste_e.jsp?title=<%= cours.getTitreCours()%>">Evaluations <i class="fa fa-edit"></i></a>      
+				<a type="button" class="evaluation btn btn-info btn-flat" href="liste_e.jsp?title=<%= cours.getTitreCours()%>">Evaluations &nbsp;<i class="fa fa-edit"></i></a>      
               </blockquote>
      	
      	</div>
@@ -88,9 +85,9 @@
                 		                		 
                 	<% }else{%>
                 	<blockquote>
-                		<a href="videoIntro.jsp?title=<%=cours.getTitreCours()%>"> Aucune video d'introduction pour l'instant. </a>
+                		<div style="olor:red;"> Aucune video d'introduction pour l'instant. </div>
                 	</blockquote>
-                	<%} %>
+                	<%}%>
      	
      	</div>
      	
@@ -250,5 +247,4 @@ $('#description').readmore({
 </body>
 
 </html>
-<%} %>
 <%} %>

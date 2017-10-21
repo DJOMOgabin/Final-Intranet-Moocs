@@ -82,7 +82,19 @@
             <span>Le Forum </span>
             <span class="label label-primary pull-right"></span>
           </a>
-        </li>                
+        </li>   
+        <li>
+          <a href="listeDevoir_e.jsp?title=<%= request.getParameter("title")%>&del=false&admin=ok">
+            <i class="fa fa-edit"></i>
+            <span>Les Devoirs </span>
+            <%
+            	Devoirs devoir = new Devoirs(request.getParameter("title"),false,true);
+            	if(devoir.getNombre()!=0){
+            %>             	
+            <span class="label label-primary pull-right"><%=devoir.getNombre()%></span>
+          	<%}%> 
+          </a>
+        </li>             
         <li>
           <a href="Enseignant/index.jsp">
             <i class="fa fa-home"></i>
