@@ -13,7 +13,8 @@
 <%@ include file="../WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file="/WEB-INF/jspf/bean/courMoocs.jspf"%>
 <%@ page
-	import="java.util.ArrayList, Modele.Cours,controlleur.Lecture, Modele.constante,Modele.Devoirs,forum.LectEcriForum, forum.OutilsChaine, Modele.DevoirsEtudiant"%>
+	import="java.util.ArrayList, Modele.Cours,controlleur.Lecture, Modele.constante,
+	Modele.Devoirs,forum.LectEcriForum, forum.OutilsChaine, Modele.DevoirsEtudiant"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,10 +89,17 @@
         <div class="box-header">
 			<div class="box-header">
             		<h3 class="box-title"> <b>LISTE DES DEVOIRS ENVOYES</b> </h3>
+            		<%if(request.getParameter("admin").length()==0){ %>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<div class="pull-right"><button class="btn alert-info" 
+						disabled id="no">No Apply</button></div>	
+						<div class="pull-right"><button class="btn alert-warning" 
+						id="apply">Apply Change</button></div>		
+					<%}%>
             </div>	
 			<div class="box-body">
 				<table id="devoirs" class="table table-bordered table-hover">
-        			<%OutilsChaine outil = new OutilsChaine(); %>
+        			<%OutilsChaine outil = new OutilsChaine();%>
 	            			<thead>
 	            				<tr>
 	            					<th> <center>#</center> </th>
@@ -101,11 +109,12 @@
 	            					<th> <center>DATE D'ENVOI</center> </th>
 	            					<th> <center>DEJA VUE </center></th>
 	            					<th> <center>TELECHARGER</center> </th>
+									<th> <center>NOTE / 20</center> </th>
 	            				</tr>
 	            			</thead>
             				<tbody>
         					<%for(int i=0; i<devoirsEtudiant.getDevoirs().size(); i++) {%>
-            				<tr id="ligne" data-note="<%=devoirsEtudiant.getNote().get(i) %>" data-note="">
+            				<tr class="ligne">
             					<td> <center><%=(i+1)%></center></td>
             					<td> <center><%=devoirsEtudiant.getMatricules().get(i) %></center></td>
             					<td> <center><%=devoirsEtudiant.getEtudiants().get(i) %></center></td>
@@ -129,7 +138,23 @@
             									<i class="fa fa-huge fa-download"></i>
             								</a>
             						</center>
-            					</td>
+            					</td>   
+            					<!-- Quand on est enseignant -->         					
+            					<%if(prefix.equals("../")){%>
+	            					<!-- Si pas encore noté -->         					
+	            					<%if(devoirsEtudiant.getNote().get(i).equals("No Note")){%>
+	            					<td data-devoir="<%=devoirsEtudiant.getLienDevoir().get(i)%>"> 
+	            						<center><input onkeyup="apply()" type="text" placeholder="<%=devoirsEtudiant.getNote().get(i)%>"></center>
+	            					</td>
+	            					<%}else{%>
+	            					<td data-devoir="<%=devoirsEtudiant.getLienDevoir().get(i)%>"> 
+	            						<center><input onkeyup="apply()" type="text" placeholder="<%=devoirsEtudiant.getNote().get(i)%>" value="<%=devoirsEtudiant.getNote().get(i)%>"></center>
+	            					</td>
+	            					<%}%>
+            					<%}else{%>
+            					<!-- Quand on est admin et qu'on inspecte le surveillant -->
+            					<td> <center><%=devoirsEtudiant.getNote().get(i)%></center></td>            					
+            					<%}%> 
             				</tr>
             				<%}%>            				
             			</tbody>
@@ -198,9 +223,8 @@
 
   <script src="<%=prefix%>dist/js/videojs-ie8.min.js"></script>
   <script src="<%=prefix%>dist/js/video.js"></script>
-
-    
 <script >
+<%@include file="chemin.jsp" %>
 	$('.download_e').on
 </script>
 
@@ -244,10 +268,29 @@ $().toastmessage('showSuccessToast', "Cours ouvert avec succès.");
 	
 	<script>
 $('#none').hide(); 
+$("#apply").hide();
 $("#newlink").submit(function(e){
 	$("#soumettre").attr("disable",true);
 	$("#go").hide();
 	$("#none").show();
+});
+
+function apply(){
+	$("#no").hide();
+	$("#apply").show();
+}
+
+$("#apply").click(function(){
+	var arrays = $('td input');
+	arrays.each(function(){
+		if($(this).val()!='' && $(this).val!='No Note'){
+			var fichier = $(this).closest("td");
+			noter($(fichier).data("devoir"),$(this).val());
+		}
+	});
+	$().toastmessage('showSuccessToast','Les devoirs ont été noté avec success!');	
+	$("#apply").hide();
+	$("#no").show();	
 });
 
 function vider(cours)
@@ -256,10 +299,24 @@ function vider(cours)
 
 		if(des == true)
 		{
-			window.location.href="listeDevoir.jsp?title="+cours+"&del=true";
+			window.location.href="listeDevoir.jsp?title="+cours+"&del=true&admin=";
 		}
 		
 }
+
+function noter(devoir,note){
+	$.ajax({
+		url:chemin+'forum',
+		type:'POST',
+		data:"type=noter&devoir="+devoir+"&note="+note,
+		error : function(resultat, statut, erreur){
+			 alert("Nous n'avons pas pu joindre le serveur, un problème est survenu");
+			 window.location.reload();
+	    }
+	});	
+}
+
+
 </script>
 </body>
 

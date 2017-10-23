@@ -136,8 +136,8 @@ public class DevoirsEtudiant {
 		try{
 			Statement prep = ouvrirBD().createStatement();
 			String query;
-			query = "insert into devoir (idcours, idetudiant, nomdevoir, liendevoir) values "
-					+ "('"+devoirEtudiant.getIdCours()+"', '"+devoirEtudiant.getIdEtudiant()+"', '"+devoirEtudiant.getNomDevoir()+"', '"+devoirEtudiant.getCheminDevoir()+"');";
+			query = "insert into devoir (note,idcours, idetudiant, nomdevoir, liendevoir) values "
+					+ "('No Note','"+devoirEtudiant.getIdCours()+"', '"+devoirEtudiant.getIdEtudiant()+"', '"+devoirEtudiant.getNomDevoir()+"', '"+devoirEtudiant.getCheminDevoir()+"');";
 			prep.executeUpdate(query);
 			prep.close();			
 		}catch(SQLException ex){

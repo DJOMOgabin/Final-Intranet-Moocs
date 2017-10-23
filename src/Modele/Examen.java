@@ -93,6 +93,67 @@ public class Examen {
 		}
 	}
 	
+	public static void Noter(String devoir,String note){
+		try{ 
+			PreparedStatement prep;
+			String query = "update devoir set note=? where liendevoir=?;";
+			connexion();
+			prep = conn.prepareStatement(query);
+			prep.setString(1, note);
+			prep.setString(2,devoir);
+			prep.executeUpdate();
+			prep.close();
+		}
+		catch(SQLException ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+	}
+
+	public static ArrayList<String> ListEpreuve(String nomCours){
+		ArrayList<String> list = new ArrayList<>();
+		try{
+ 
+			PreparedStatement prep;
+			String query = "select titre from epreuve where matiere=?;";
+			connexion();
+			prep = Examen.getConn().prepareStatement(query);
+			prep.setString(1, nomCours);
+			ResultSet result = prep.executeQuery();
+			while(result.next()) list.add(result.getString("titre"));
+			result.close();
+			prep.close();
+		}
+		catch(SQLException ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return list;
+	}
+	
+	public static String ListCopie(String nomCours,String nomCopie){
+		String list = "0";
+		try{
+ 
+			PreparedStatement prep;
+			String query = "select count(cours) nb from copie where cours=? and epreuve=?;";
+			connexion();
+			prep = Examen.getConn().prepareStatement(query);
+			prep.setString(1, nomCours);
+			prep.setString(2, nomCopie);
+			ResultSet result = prep.executeQuery();
+			while(result.next()) list=result.getString("nb");
+			System.out.println("le nombre : "+list);
+			result.close();
+			prep.close();
+		}
+		catch(SQLException ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return list;
+	}
+	
 	public static void supprimer(String nomCours,String nomExam){
 		try{
 			

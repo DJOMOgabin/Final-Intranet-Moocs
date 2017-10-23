@@ -149,7 +149,7 @@ Modele.Devoirs,java.sql.SQLException,Traitement.PaireString,java.sql.ResultSet,c
 <script src="dist/js/readmore.js"></script>
 <script type="text/javascript" src="MathJax/MathJax.js?config=AM_HTMLorMML-full"></script>
 <script src="bootstrap/js/script.js" type="text/javascript"></script>
-<script type="text/javascript" src="MathJax/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script type="text/javascript" src="js/MathJax.js?config=AM_HTMLorMML-full"></script>
 <script>
 <%@include file="Enseignant/chemin.jsp" %>
 $('#none').hide(); 

@@ -190,7 +190,6 @@ function supprimer(cours,epreuve)
 	console.log("start");
 	$(".supprimer").click(function(){
 		var row = $(this).closest(".row");
-		console.log("Click supprimer");
 		supprimer(nomCours,$(row).data('nomepreuve'));
 	});
 

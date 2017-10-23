@@ -7,7 +7,7 @@
           </a>
           <ul class="treeview-menu"> 
           	  <li><a href="statEtd.jsp"><i class="fa fa-circle-o"></i> Statistiques sur les &eacute;tudiants <span class="label label-primary pull-right"><%=teacher.getNombreTotalEtd()%></span></a></li>
-			  <li><a href="statDevoir.jsp"><i class="fa fa-circle-o"></i> Statistiques sur les devoirs <span class="label label-primary pull-right"><%=teacher.getNombreTotalEtd()%></span></a></li>
+			  <li><a href="statDevoir.jsp"><i class="fa fa-circle-o"></i> Statistiques sur les devoirs <span class="label label-primary pull-right"></span></a></li>
 			  <li><a href="statCours.jsp"><i class="fa fa-circle-o"></i> Statistiques sur les cours <span class="label label-primary pull-right"><%=teacher.getNombreCours()%></span></a></li>
 			  <li>
 			  	<a href="statistiques_e.jsp">

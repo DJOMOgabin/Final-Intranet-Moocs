@@ -143,7 +143,7 @@ Modele.Devoirs,java.sql.SQLException,Traitement.PaireString,java.sql.ResultSet" 
 <script src="../dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
-<script type="text/javascript" src="../MathJax/MathJax.js?config=AM_HTMLorMML-full"></script>
+<script type="text/javascript" src="../js/MathJax.js?config=AM_HTMLorMML-full"></script>
 <script src="http://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"></script>
 <script src="http://vjs.zencdn.net/5.2.2/video.js"></script>
 <script src="../dist/js/readmore.js"></script>
@@ -188,7 +188,6 @@ function supprimer(id,theme)
 	console.log("start");
 	$(".supprimer").click(function(){
 		var row = $(this).closest(".row");
-		console.log($(row).data('nomforum'));
 		supprimer(idCours,$(row).data('nomforum'));
 	});
 	
@@ -210,7 +209,6 @@ function supprimer(id,theme)
 				url:chemin+'forum',
 				type:'POST',
 				data:"type=create&id="+id+"&theme="+theme,
-				//dataType:'json',
 				
 				success:function(code_html,statut){
 					if(code_html=='true'){
@@ -222,10 +220,7 @@ function supprimer(id,theme)
 				},		
 				error : function(resultat, statut, erreur){
 					 alert("Nous n'avons pas pu créer le sujet, un problème est survenu");
-			    },
-				/*complete : function(resultat,statut){
-					
-				}*/
+			    }
 			});
 		}
 	}

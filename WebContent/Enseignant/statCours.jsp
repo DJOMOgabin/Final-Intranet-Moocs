@@ -104,18 +104,13 @@
 					<tbody>
 						
 							<%list = connecteurForum.getListeCours();  s = new Cours(); %>
-								<%for(int i=0; i<list.size();i++){ %>
-							
+								<%for(int i=0; i<list.size();i++){%>
 						<tr class="<%=i%2==0?"success":"info"%>">
 									<td><center><%=i+1 %></center></td>
-									<td><center><%=list.get(i).toUpperCase() %></center></td>
-									
-									<%s.setTitreCours(list.get(i));%>	
-									
+									<td><center><%=list.get(i).toUpperCase() %></center></td>									
+									<%s.setTitreCours(list.get(i));%>										
 									<td><center><%=s.getNombreCours()%></center></td>
 									<td><center><%=s.getNomEnseignant().toUpperCase() %></center></td>
-									
-							
 						</tr>
 							<%} %>
 					

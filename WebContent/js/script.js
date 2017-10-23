@@ -86,8 +86,7 @@ function verifForm(f){
     		i=exer;
     		j=ques;
     		bool=false;
-    	}
-    	
+    	}    	
     	i++;
     	j=0;
     	var tr = document.createElement('div');
@@ -95,8 +94,7 @@ function verifForm(f){
     			"<input class='exercice form-control' type='text' name='exercice"+i+"' value='' placeholder=\"Titre de l' exercice\" size='100' maxlength='100'/>" +
     			"<br><br><br><p><textarea rows='7' cols='150' class='enonce  form-control' name='enonce"+i+"'  placeholder=\"Veuillez entrer l'enoncé de votre exercice\"></textarea><p>";
     	document.getElementById('epreuve').appendChild(tr);
-    	question(i,j);
-    	
+    	question(i,j);    	
     }
     
     function question(exer,ques){
@@ -136,7 +134,6 @@ function verifForm(f){
 			"</div></div><p>"+
 		"</div>";
     	document.getElementById('div'+i).appendChild(td);
-
     }
     
     

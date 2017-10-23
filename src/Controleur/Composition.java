@@ -53,6 +53,11 @@ public class Composition extends HttpServlet {
 			String theme=request.getParameter("theme");
 			etat = ""+LectEcriForum.Creation(idcours, theme,true);	
 			response.getWriter().write(etat);
+		}else if(request.getParameter("type").equals("noter")){
+			String devoir=request.getParameter("devoir");
+			String note=request.getParameter("note");
+			Examen.Noter(devoir, note);
+			response.getWriter().write("true");			
 		}
 	}
 	

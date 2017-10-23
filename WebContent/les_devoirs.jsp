@@ -40,16 +40,6 @@
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 </head>
 <%
-	/*if(request.getParameter("title")!=null || request.getAttribute("title")!=null){
-		String title = request.getParameter("title");
-		Upload.setToast(false);
-		if(title==null){
-			title=(String)request.getAttribute("title");
-			Upload.setToast(true);
-		}
-		Cours cours = new Cours(); 
-		cours.setTitreCours(title);
-		courMoocs.setTitreCours(title);*/
 		Cours cours = courMoocs;
 %>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -93,6 +83,7 @@
 				            					<th> <center>DATE D'ENVOI</center> </th>
 				            					<th> <center> VUE PAR LE PROF</center></th>
 				            					<th> <center>TELECHARGER</center> </th>
+				            					<th> <center>NOTE / 20</center> </th>
 				            				</tr>
 				            			</thead>
 			            				<tbody>
@@ -105,9 +96,9 @@
 			            						<center>
 			            							<%if(devoirsEtudiant.getVue().get(i).equalsIgnoreCase("true")){ %>
 			            								<span style="color:#008000" class="glyphicon glyphicon-ok center .fa-2x" aria-hidden="true"></span>
-			            							<%} else{ %>
+			            							<%}else{ %>
 			            								<span style="color:#FF0000" class="glyphicon glyphicon-remove center .fa-2x" aria-hidden="true"></span>
-			            							<%} %>
+			            							<%}%>
 			            						</center>
 			            					</td>
 			            					<td>
@@ -121,6 +112,7 @@
 			            							</span>
 			            						</center>
 			            					</td>
+			            					<td> <center><%=devoirsEtudiant.getNote().get(i)%></center></td>
 			            				</tr>
 			            			<%}%>
 			            			</tbody>

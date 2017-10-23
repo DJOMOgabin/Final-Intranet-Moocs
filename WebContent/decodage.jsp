@@ -10,14 +10,6 @@ function decodage(){
 			temp = $(this).text();
 			$(this).text("");
 			$(this).append(temp);
-		});
-		
-		/*var arrays = document.getElementsByTagName("label");
-		if(arrays > 0){
-			for(var h=0;h < arrays.length;h++){
-				alert(arrays[h].value);
-				arrays[h].innerHTML = "toto";
-			}
-		}*/		
+		});	
 	}
 	window.onload = decodage();

@@ -36,7 +36,6 @@
 <body class="hold-transition skin-blue sidebar-mini">
     <%if(session.getAttribute("user")!=null){%>
 		<%@ include file="entete_e.jsp" %>
-		<% System.out.println("Pourquoi ça fait ça?"); %>
 	<%}else{ %>
 		<%@ include file="enteteAperçu.jsp"%>
 	<%} %>

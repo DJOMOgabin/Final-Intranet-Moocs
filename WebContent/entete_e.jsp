@@ -90,7 +90,7 @@
         
          <li>
           <a href="les_devoirs.jsp?title=<%=request.getParameter("title")%>&del=false">
-            <i class="fa fa-book"></i>
+            <i class="fa fa-edit"></i>
             <span>Les devoirs </span>
           </a>
         </li>

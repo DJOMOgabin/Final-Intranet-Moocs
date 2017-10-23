@@ -2,7 +2,8 @@
 <%@ include file = "../WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file="../WEB-INF/jspf/bean/connecteurforum.jspf" %>
 <%@ include file="/WEB-INF/jspf/bean/courMoocs.jspf"%>
-<%@ page import = "java.util.*, Modele.Cours, Modele.constante, Modele.User, Hibernate.HibernateCopie, Modele.CopieEtudiant,Modele.Epreuve"  %>
+<%@ page import = "java.util.*, Modele.Cours,Modele.Examen, 
+Modele.constante, Modele.User, Hibernate.HibernateCopie, Modele.CopieEtudiant,Modele.Epreuve"  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,18 +77,15 @@
 					<tbody>
 						
 						
-								<%List liste = (List) HibernateCopie.getEpreuve(request.getParameter("title")); %>
+								<%ArrayList<String> liste = Examen.ListEpreuve(request.getParameter("title")); %>
 								<% if(liste!=null){ %>
 								<% for(int i=0; i<liste.size();i++){ %>
-								<%Epreuve cp = (Epreuve)liste.get(i); %>
-								
-							
 						<tr class="<%=i%2==0?"success":"info"%>">
 									<td><center><%=i+1 %></center></td>	
-									<td><center><a href="stats_n.jsp?title=<%=request.getParameter("title")%>&epreuve=<%=cp.getTitre()%>"><%=cp.getTitre() %></a></center></td>
+									<td><center><a href="stats_n.jsp?title=<%=request.getParameter("title")%>&epreuve=<%=liste.get(i)%>"><%=liste.get(i)%></a></center></td>
 									
-									<% ArrayList<CopieEtudiant> liste1 = HibernateCopie.getetudiant(request.getParameter("title"), cp.getTitre());long nb=0;if(liste1 != null){nb=liste1.size();} %>
-									<td><center><%=nb %></center></td>
+									<%String liste1 = Examen.ListCopie(request.getParameter("title"),liste.get(i));%>
+									<td><center><%=liste1 %></center></td>
 						</tr>
 							<%} %>
 					<% } %>

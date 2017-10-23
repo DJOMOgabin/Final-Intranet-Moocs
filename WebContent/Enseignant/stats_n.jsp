@@ -44,13 +44,13 @@
         User etudiant=new User();
         etudiant.setNom(etudiant.getNomId(id_etudiant));
         String NomEtudiant=etudiant.getNomId(id_etudiant)+""+etudiant.getPrenomId(id_etudiant);%>
-     		<div class="col-md-4">
+     		<div class="col-md-5">
      			<div class="box box-primary">
             		<div class="box-body box-profile">
             			<!-- <img class="profile-user-img img-responsive img-circle" src="../dist/img/user.png" class="img-circle" alt="User Image"> -->
             			<h3 class="profile-username text-center"><%=etudiant.getNom()%></h3>
 						<ul class="list-group list-group-unbordered">
-						<li class="list-group-item">
+							<li class="list-group-item">
 			                  <b>Cours</b> <a class="pull-right"><%=request.getParameter("title") %></a>
 			                </li>
 			                <li class="list-group-item">
@@ -71,7 +71,7 @@
             	</div>
      		</div>
      		
-     		<div class="col-md-8">
+     		<div class="col-md-7">
      			<div class="nav-tabs-custom">
 		            <ul class="nav nav-tabs">
 		              <li class="active"><a href="#courses" data-toggle="tab">Etudiants</a></li>
@@ -87,12 +87,7 @@
 						
 							<th> <center>#</center> </th>
 							<th> <center>Nom de l'Etudiant</center> </th>
-							<%if(liste==null || liste.size()==0){%>
-								<th> <center>Note</center> </th>
-							<%}else{ %>							
-								<th> <center>Note / <%=liste.get(0).getMax()%></</center> </th>
-							<%} %>
-					
+							<th> <center>Note</center> </th>
 					</tr>
 				
 				</thead>
@@ -102,37 +97,21 @@
 						<tr class=""success":"info"%>
 							<td><center><%=i+1%></center></td>
 							<% CopieEtudiant copie = (CopieEtudiant) liste.get(i);%>
-							<td><center><%=userMooc.getNomId(copie.getIdEtudiant()) %></center></td> 
-							
+							<td><center><%=userMooc.getNomId(copie.getIdEtudiant()) %></center></td>							
 							<td><center><%=copie.getNote() %> / <%=copie.getMax()%></center></td>
-				
-							
 						</tr>
 						<%} %>
-				
-				
 				</tbody>
-			
-			
 			</table>
-        	
 		            	</div>
 		            	<div class="tab-pane" id="bord">
-		            		
 		            	</div>
 		            	<div class="tab-pane" id="perso">
-		  
-        		
 		            	</div>
 		            </div>
             	</div>
      		</div>
-     		
-     		
-     	
      	</div>
-     
-     
     <%@include file="../footer.jsp" %>
     
 

@@ -1,7 +1,5 @@
 package Modele;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -11,50 +9,43 @@ import java.util.List;
 
 public class DevoirBean {
 
-    public List<Devoir> getDevoirBD() {
-        Connection conn;
+    public static List<Devoir> getDevoirBD(String idProf) {
         List<Devoir> ls = new ArrayList<Devoir>();
         try {
-            conn = this.ouvrirBD();
-
-            Statement stat = conn.createStatement();
-
-            ResultSet rs = stat.executeQuery("select * from devoir");
-
+            Statement stat = Examen.getConn().createStatement();
+            Devoir d;
+            ResultSet rs = stat.executeQuery("select titrecours, etudiant.nom, etudiant.matricule,"
+            		+ "count(devoir.idetudiant) nombre, sum(devoir.note)/count(devoir.idetudiant) note "
+            		+ "from devoir,cours,etudiant,prof_cours where devoir.idcours=cours.idcours "
+            		+ "and devoir.idetudiant=etudiant.idetudiant and idpro = '"+idProf+"' and "
+            		+ "id_cours=cours.idcours and devoir.enseignant='true' group by devoir.idcours;");
+            
             while (rs.next()) {
-                Devoir d = new Devoir();
-                d.setIdDevoir(rs.getInt("id_devoir"));
-                d.setIdCours(rs.getInt("id_cours"));
-                d.setEtat(rs.getString("etat"));
-                d.setTypeDevoir(rs.getString("type_devoir"));
+                d = new Devoir();
+                d.setNomCours(rs.getString("titrecours"));
+                d.setNomEtudiant(rs.getString("nom"));
+                d.setNombreDevoir(rs.getString("nombre"));
+                d.setMatricule(rs.getString("matricule"));
+                d.setNoteMoyenne(String.format("%.2f",Float.parseFloat(rs.getString("note"))));
                 ls.add(d);
-
             }
 
             rs.close();
             stat.close();
-            conn.close();
 
         } catch (SQLException e) {
             System.out.println("Erreur : " + e.getMessage());
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
+        } 
         return ls;
     }
 
     public Integer getnombreParticipant(Integer idDevoir) {
-        Connection conn;
         if (idDevoir == null) {
             return 0;
         }
         int nombre = 0;
         try {
-            conn = this.ouvrirBD();
-
-            Statement stat = conn.createStatement();
+            Statement stat = Examen.getConn().createStatement();
 
             ResultSet rs = stat.executeQuery("select count(id_etudiant) as nombre from devoir_etudiant where id_devoir=" + idDevoir);
 
@@ -66,15 +57,10 @@ public class DevoirBean {
 
             rs.close();
             stat.close();
-            conn.close();
 
         } catch (SQLException e) {
             System.out.println("Erreur : " + e.getMessage());
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         }
-
         return nombre;
     }
 
@@ -95,15 +81,12 @@ public class DevoirBean {
     }
 
     public int getNombreDeNoteParIntervalle(Integer idDevoir, Integer min, Integer max) {
-        Connection conn;
         if (idDevoir == null || min == null || max == null) {
             return 0;
         }
         int nombre = 0;
         try {
-            conn = this.ouvrirBD();
-
-            Statement stat = conn.createStatement();
+            Statement stat = Examen.getConn().createStatement();
 
             ResultSet rs = stat.executeQuery("select count(id_etudiant) as nombre from devoir_etudiant where id_devoir=" + idDevoir + " and note>=" + min + " and note<" + max);
 
@@ -115,29 +98,20 @@ public class DevoirBean {
 
             rs.close();
             stat.close();
-            conn.close();
 
         } catch (SQLException e) {
             System.out.println("Erreur : " + e.getMessage());
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         }
-
         return nombre;
     }
 
     public String getHistogramme(String idDevoir) {
-        Connection conn;
-
         String code = "[[\"id\",\"note\"]";
         if (idDevoir == null || idDevoir.isEmpty()) {
             return code + "]";
         }
         try {
-            conn = this.ouvrirBD();
-
-            Statement stat = conn.createStatement();
+            Statement stat = Examen.getConn().createStatement();
 
             ResultSet rs = stat.executeQuery("select id_etudiant  ,note  from devoir_etudiant where id_devoir=" + idDevoir);
 
@@ -148,29 +122,19 @@ public class DevoirBean {
             code = code + "]";
             rs.close();
             stat.close();
-            conn.close();
-
         } catch (SQLException e) {
             System.out.println("Erreur : " + e.getMessage());
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         }
-
         return code;
     }
 
     public String getTitreCercle(String idDevoir) {
-        Connection conn;
-
         String code = "";
         if (idDevoir == null || idDevoir.isEmpty()) {
             return code;
         }
         try {
-            conn = this.ouvrirBD();
-
-            Statement stat = conn.createStatement();
+            Statement stat = Examen.getConn().createStatement();
 
             ResultSet rs = stat.executeQuery("select id_cours  ,date_echeance, type_devoir  from devoir where id_devoir=" + idDevoir);
             Integer idc = null;
@@ -181,7 +145,6 @@ public class DevoirBean {
 
             rs.close();
             stat.close();
-            conn.close();
             if (idc != null) {
                 Cours c = new Cours();
                 String s = c.getTitreCoursID(idc) + "";
@@ -193,32 +156,8 @@ public class DevoirBean {
 
         } catch (SQLException e) {
             System.out.println("Erreur : " + e.getMessage());
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         }
-
         return code;
-    }
-
-    public Connection ouvrirBD() throws SQLException, ClassNotFoundException {
-        Connection conn = null;
-
-        try {
-
-            Class.forName(constante.driver);
-            conn = DriverManager.getConnection(new constante().chaine_connexion, new constante().log_bd, new constante().pass_bd);
-
-        } catch (SQLException e) {
-
-            throw new SQLException("Erreur\nDetails " + e.getMessage());
-
-        } catch (ClassNotFoundException e) {
-            throw new ClassNotFoundException("Erreur\nDetails " + e.getMessage());
-        }
-
-        return conn;
-
     }
 
     public String getHeureActuelle(Date date) {

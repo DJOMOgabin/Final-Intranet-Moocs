@@ -80,10 +80,10 @@
             
                 <section class="content">
                     <div class="row">
-                        <div class="col-md-6 col-lg-6 col-md-12 col-xs-12">
+                        <div class="col-md-5 col-lg-5">
                             <div class="box box-info">
                                 <div class="box-header">
-                                    <h3 class="box-title"><i class="fa fa-bar-chart"></i> FREQUENCE DES NOTES NOTES</h3>
+                                    <h3 class="box-title"><i class="fa fa-bar-chart"></i> FREQUENCE DES NOTES</h3>
                                 </div>
                                 <div class="box-body">
                                     <div id="graph" style="height: 300px">
@@ -95,7 +95,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-6 col-md-12 col-xs-12">
+                        <div class="col-md-7 col-lg-7">
                             <div class="box box-info">
                                 <div class="box-header with-border">
                                     <h3 class="box-title"><i class="fa fa-table"></i> TABLEAU RECAPITULATIF DES DEVOIRS</h3>
@@ -103,51 +103,34 @@
                                 <div class="box-body">
                                     <div class="table-responsive">
                                         <table id="table_id" class="table table-striped table-bordered table-hover display">
-
                                             <thead>
                                                 <tr>
                                                     <th> # </th>
-                                                    <th>  MATIERE   </th>
-                                                    <th>  # DEVOIR </th>
-                                                    <th>#ETAT </th>
-                                                    <th># TAUX DE PARTICIPATION </th>
-                                                    <th># FREQUENCE DES NOTES </th>
-
+                                                    <th>MATIERE</th>
+                                                    <th>ETUDIANT </th>
+                                                    <th>MATRICULE </th>
+                                                    <th>NOMBRE</th>
+                                                    <th>MOYENNE / 20</th>
                                                 </tr>
-
                                             </thead>
-
                                             <tbody>
-
-                                                <%
-                                                
-                                                List<Devoir> listd = devoirBean.getDevoirBD();
-                                                    Cours s = new Cours();
-                                                  
-                                                    for (int i = 0; i < listd.size(); i++) {%>
-
-                                                <tr class="<%=i % 2 == 0 ? "success" : "info"%>">
-
-                                                    <td><%=i + 1%></td>
-                                                    <td><%=connecteurForum.getNomCoursID(listd.get(i).getIdCours())%></td>
-
-                                                    <td><%=listd.get(i).getTypeDevoir()%></td>
-
-                                                    <td><%=listd.get(i).getEtat()%></td>
-
-                                                    <td><%=devoirBean.getnombreParticipant(listd.get(i).getIdDevoir())%></td>
-                                                    <td> <a href="stat_devour_controle.jsp?id=<%=listd.get(i).getIdDevoir()%>"><span title="Voir la fréquence des notes" class="glyphicon glyphicon-stats"></span></a></td>
-                                                </tr>
-                                                <%} %>
-
+                                            <%List<Devoir> list = DevoirBean.getDevoirBD(""+teacher.getId());
+                                            for (int i = 0; i < list.size(); i++) {%>
+	                                            <tr class="<%=i%2==0?"success":"info"%>">
+				            						<td> <center><%=(i+1)%></center></td>
+				            						<td> <center><%=list.get(i).getNomCours()%></center></td>
+				            						<td> <center><%=list.get(i).getNomEtudiant()%></center></td>
+				            						<td> <center><%=list.get(i).getMatricule()%></center></td>
+				            						<td> <center><%=list.get(i).getNombreDevoir()%></center></td>
+				            						<td> <center><%=list.get(i).getNoteMoyenne()%></center></td>                                            
+	                                            </tr>
+                                            <%}%>
                                             </tbody>
 
                                         </table>
                                     </div>
                                     <br/>
                                     <a href="#" id="imprime" class="pull-right btn btn-success"> IMPRIMER <i class="fa fa-print"></i></a>
-
-
                                 </div>
                             </div>
                         </div>
