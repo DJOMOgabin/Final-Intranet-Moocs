@@ -27,8 +27,7 @@ public class Lecture{
 	public static String Fichier(String nom){
 		if(nom.equalsIgnoreCase("hibernate.cfg.xml")){
 			return nom;
-		}
-		else {
+		}else {
 			String className=Upload.class.getName().replaceAll("\\.", "/" )+".class";
 			URL classPath=Upload.class.getClassLoader().getResource(className);
 			File f=new File(classPath.getPath());

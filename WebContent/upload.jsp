@@ -47,6 +47,7 @@
 				<div class="alert alert-info alert-dismissible">
 					<h4><i class="icon fa fa-info-circle"></i> Nouveau devoir  <i class="fa fa-book"></i> </h4>
 					Veuillez remplir les informations sur le devoir , puis cliquez sur <b> Envoyer </b>
+					<div class="pull-right">Ne pas mettre d'<b style="color:red;">Apostrophe</b> dans le nom du devoir.</div>
          		</div>
 			</div>
 		</div>

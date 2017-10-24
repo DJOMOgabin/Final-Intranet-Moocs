@@ -37,11 +37,8 @@
     <body class="hold-transition skin-blue sidebar-mini">
 	<%@ include file="entete2.jsp" %>            <!-- Graphe -->
             <!--#########################################################################  -->
-            <%
-
-                String id1 = request.getParameter("id");
+            <%  String id1 = request.getParameter("id");
                 String titre = request.getParameter("titre");
-               
                 String code = devoirBean.getCode(id1 == null ? null : Integer.valueOf(id1));
                 out.print("<input type=\"text\" class=\"hidden\" id =\"titre\" value=\"" + titre + "\"/>" + "\n");
             %>
@@ -106,11 +103,9 @@
                                             <thead>
                                                 <tr>
                                                     <th> # </th>
-                                                    <th>MATIERE</th>
-                                                    <th>ETUDIANT </th>
-                                                    <th>MATRICULE </th>
-                                                    <th>NOMBRE</th>
-                                                    <th>MOYENNE / 20</th>
+                                                    <th><center>TITRE DU COURS</center></th>
+                                                    <th><center>NOMBRE DE DEVOIRS</center></th>
+                                                    <th><center>MOYENNE / 20</center></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -119,8 +114,6 @@
 	                                            <tr class="<%=i%2==0?"success":"info"%>">
 				            						<td> <center><%=(i+1)%></center></td>
 				            						<td> <center><%=list.get(i).getNomCours()%></center></td>
-				            						<td> <center><%=list.get(i).getNomEtudiant()%></center></td>
-				            						<td> <center><%=list.get(i).getMatricule()%></center></td>
 				            						<td> <center><%=list.get(i).getNombreDevoir()%></center></td>
 				            						<td> <center><%=list.get(i).getNoteMoyenne()%></center></td>                                            
 	                                            </tr>
@@ -134,14 +127,9 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>		
-                
     <%@include file="../footer.jsp" %>
-    
-
         <!-- /#wrapper -->
-
         <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
 
 

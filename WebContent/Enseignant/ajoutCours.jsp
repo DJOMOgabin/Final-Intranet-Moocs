@@ -49,6 +49,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h4><i class="icon fa fa-info-circle"></i> Ajouter un cours  <i class="fa fa-book"></i> </h4>
                 Veuillez remplir les informations sur le nouveau cours , puis cliquez sur <b> Cr&eacute;er </b>
+					<div class="pull-right">Ne pas mettre d'<b style="color:red;">Apostrophe</b> dans le nom du cours.</div>
          </div>
 		</div>
 		</div>

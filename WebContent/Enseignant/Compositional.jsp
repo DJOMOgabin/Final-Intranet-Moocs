@@ -41,6 +41,7 @@
 				<div class="alert alert-info alert-dismissible">
 	    			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	                <h4><i class="icon fa fa-info-circle"></i> Créez votre épreuve à votre convenance</h4>
+					<div class="pull-right">Ne pas mettre de <b style="color:red;">Charactères spéciaux</b> dans le champ du titre.</div>
 	         	</div>
 			</div>
 		</div>

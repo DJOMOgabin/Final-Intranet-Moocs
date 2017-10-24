@@ -14,18 +14,15 @@ public class DevoirBean {
         try {
             Statement stat = Examen.getConn().createStatement();
             Devoir d;
-            ResultSet rs = stat.executeQuery("select titrecours, etudiant.nom, etudiant.matricule,"
-            		+ "count(devoir.idetudiant) nombre, sum(devoir.note)/count(devoir.idetudiant) note "
-            		+ "from devoir,cours,etudiant,prof_cours where devoir.idcours=cours.idcours "
-            		+ "and devoir.idetudiant=etudiant.idetudiant and idpro = '"+idProf+"' and "
-            		+ "id_cours=cours.idcours and devoir.enseignant='true' group by devoir.idcours;");
+            ResultSet rs = stat.executeQuery("select titrecours,"
+            		+ "count(devoir.idcours) nombre, sum(devoir.note)/count(devoir.idcours) note "
+            		+ "from devoir,cours,prof_cours where devoir.idcours=cours.idcours and idpro = '"+idProf+"' "
+            		+ "and id_cours=cours.idcours and devoir.enseignant='true' group by devoir.idcours;");
             
             while (rs.next()) {
                 d = new Devoir();
                 d.setNomCours(rs.getString("titrecours"));
-                d.setNomEtudiant(rs.getString("nom"));
                 d.setNombreDevoir(rs.getString("nombre"));
-                d.setMatricule(rs.getString("matricule"));
                 d.setNoteMoyenne(String.format("%.2f",Float.parseFloat(rs.getString("note"))));
                 ls.add(d);
             }

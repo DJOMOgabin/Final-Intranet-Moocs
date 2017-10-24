@@ -45,6 +45,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h4><i class="icon fa fa-info-circle"></i> Ajouter un enseignant  <i class="fa fa-user"></i> </h4>
                 Veuillez remplir les informations sur l'enseignant  , puis cliquez sur <b> Cr&eacute;er </b>
+				<div class="pull-right">Ne pas mettre d'<b style="color:red;">Apostrophe</b> dans le nom et prénom de enseignant.</div>
          </div>
 		</div>
 		</div>
