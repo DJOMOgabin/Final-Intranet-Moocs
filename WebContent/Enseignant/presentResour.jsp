@@ -1,7 +1,7 @@
 <%if(session.getAttribute("enseignant")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
 <%@ include file = "../WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file = "../WEB-INF/jspf/bean/courMoocs.jspf" %>
-<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante" %>
+<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante,Modele.Devoirs" %>
 <!DOCTYPE html>
 <html lang="en">
 <%
@@ -15,7 +15,6 @@
 		}else{
 		cours.setTitreCours(new String(title.getBytes("ISO-8859-1"),"UTF-8"));
 		}
-		System.out.println(new String(title.getBytes("ISO-8859-1"),"UTF-8")+"\n"+cours.getNombreSemainesCoursBD());
 %>
 <head>
   <meta charset="utf-8">
@@ -52,7 +51,7 @@
   </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-	<%@ include file="entete2.jsp" %>
+	<%@ include file="entete.jsp" %>
 	<section class="content">
 	
 		<div class="row">

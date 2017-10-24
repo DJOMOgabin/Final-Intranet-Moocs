@@ -4,18 +4,13 @@
 <%@ include file = "WEB-INF/jspf/bean/courMoocs.jspf" %>
 
 <%@ include file = "WEB-INF/jspf/bean/connecteurforum.jspf"%>
-<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante" %>
+<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante,Modele.Devoirs" %>
 <!DOCTYPE html>
 <html lang="en">
-<%
-	if(request.getParameter("title")!=null)
-	{
-		
+<%	
 		String title = request.getParameter("title");
-		Cours cours = new Cours(); 
-		cours.setTitreCours(title);
-		System.out.println(cours.getTitreCours()+"\n"+cours.getNombreSemainesCoursBD());
 		courMoocs.setTitreCours(title);
+		Cours cours = courMoocs;
 %>
 <head>
   <meta charset="utf-8">
@@ -202,5 +197,4 @@ $('#description').readmore({
 </script>
 </body>
 </html>
-<%} %>
 <%} %>

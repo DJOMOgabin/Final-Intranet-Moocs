@@ -36,9 +36,12 @@ public class Lecture{
 			String Path1 = WEB_INF.substring(0, WEB_INF.indexOf("WEB-INF")) + nom;
 			Path1 = Path1.replaceAll("%20", " ");
 			if(nom.equalsIgnoreCase("hibernate.cfg.xml")){
-				return nom;
+				System.out.println("le chemin : "+Path1);
+				return Path1;
 			}
-			else return Path1;
+			else {
+				return Path1;
+			}
 	 }
 	 
 	//La fonction permet de lire dans le fichier config.djo, qui est le fichier de configuration de notre 

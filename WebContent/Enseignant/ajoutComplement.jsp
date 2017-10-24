@@ -1,7 +1,7 @@
 <%if(session.getAttribute("enseignant")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
 <%@ include file = "../WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file= "/WEB-INF/jspf/bean/courMoocs.jspf" %>
-<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante" %>
+<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante,Modele.Devoirs" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +35,7 @@
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-	<%@ include file="entete2.jsp" %>
+	<%@ include file="entete.jsp" %>
   		    <%Cours c = new Cours(); %>
 			<%if(request.getParameter("title")==null){ %>
 			<%c.setTitreCours(courMoocs.getTitreCours()); %>
