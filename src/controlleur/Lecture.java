@@ -25,27 +25,25 @@ public class Lecture{
 	}
 	
 	public static String Fichier(String nom){
-		 String className=Upload.class.getName().replaceAll("\\.", "/" )+".class";
+		if(nom.equalsIgnoreCase("hibernate.cfg.xml")){
+			return nom;
+		}
+		else {
+			String className=Upload.class.getName().replaceAll("\\.", "/" )+".class";
 			URL classPath=Upload.class.getClassLoader().getResource(className);
 			File f=new File(classPath.getPath());
 			while(f!=null && !f.getName().equals("WEB-INF")){
-			 f=f.getParentFile();
+				f=f.getParentFile();
 			}
-			if(f!=null)
-			 WEB_INF=f.getPath().replace('\\', '/');
+			if(f!=null)WEB_INF=f.getPath().replace('\\', '/');
 			String Path1 = WEB_INF.substring(0, WEB_INF.indexOf("WEB-INF")) + nom;
-			Path1 = Path1.replaceAll("%20", " ");
-			if(nom.equalsIgnoreCase("hibernate.cfg.xml")){
-				System.out.println("le chemin : "+Path1);
-				return Path1;
-			}
-			else {
-				return Path1;
-			}
+			Path1 = Path1.replaceAll("%20", " ");			
+			return Path1;
+		}		 
 	 }
 	 
 	//La fonction permet de lire dans le fichier config.djo, qui est le fichier de configuration de notre 
-	//base de données
+	//base de donnï¿½es
 	 public void lecture(){
 		try {
 			String line,mot,value;
@@ -77,7 +75,7 @@ public class Lecture{
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			setEffectuer(false);
-			setError("fichier introuvable, veuiller à ce qu'il soit là. Merci");			
+			setError("fichier introuvable, veuiller ï¿½ ce qu'il soit lï¿½. Merci");			
 		}		
 	}
 	 
