@@ -5,3 +5,4 @@ Intranet Mooc est une plateforme de Mooc académique permettant aux enseignants 
 # CSP
 =======
 >>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
+# Final-Intranet-Moocs
