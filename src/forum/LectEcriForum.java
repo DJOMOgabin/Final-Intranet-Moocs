@@ -82,7 +82,7 @@ public class LectEcriForum {
 	}
 	
 	public static ArrayList<Forum> Lecture(String nomCours, String theme){
-		ArrayList<Forum> text= new ArrayList<>();
+		ArrayList<Forum> text= new ArrayList<Forum>();
 		nomCours = getCours(nomCours);
 		try {
 			Scanner clavier = new Scanner(new FileInputStream(Lecture.Fichier(chemin+nomCours+"/"+theme.hashCode()+extension)));

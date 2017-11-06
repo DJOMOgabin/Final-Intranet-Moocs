@@ -111,7 +111,7 @@ public class Examen {
 	}
 
 	public static ArrayList<String> ListEpreuve(String nomCours){
-		ArrayList<String> list = new ArrayList<>();
+		ArrayList<String> list = new ArrayList<String>();
 		try{
  
 			PreparedStatement prep;
