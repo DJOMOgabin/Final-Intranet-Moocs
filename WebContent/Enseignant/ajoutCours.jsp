@@ -26,6 +26,15 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
 
+<<<<<<< HEAD
+=======
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
   <script>
   function verif(evt) {
       var keyCode = evt.which ? evt.which : evt.keyCode;
@@ -49,7 +58,10 @@
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h4><i class="icon fa fa-info-circle"></i> Ajouter un cours  <i class="fa fa-book"></i> </h4>
                 Veuillez remplir les informations sur le nouveau cours , puis cliquez sur <b> Cr&eacute;er </b>
+<<<<<<< HEAD
 					<div class="pull-right">Ne pas mettre d'<b style="color:red;">Apostrophe</b> dans le nom du cours.</div>
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
          </div>
 		</div>
 		</div>
@@ -197,12 +209,44 @@
 					}
 			
 				});
+<<<<<<< HEAD
 		<%@include file="accent.jsp"%>
 		function chiffrer(){
 		 //On chiffre tous les champs pour éviter les problèmes d'encodage avant d'envoyer dans la base de données
 		  $('#titre').val($('#titre').val().sansAccent());
 			  return true;
 	      }	    
+=======
+
+							String.prototype.sansAccent = function(){
+							    var accent = [
+							        /[\300-\306]/g, /[\340-\346]/g, // A, a
+							        /[\310-\313]/g, /[\350-\353]/g, // E, e
+							        /[\314-\317]/g, /[\354-\357]/g, // I, i
+							        /[\322-\330]/g, /[\362-\370]/g, // O, o
+							        /[\331-\334]/g, /[\371-\374]/g, // U, u
+							        /[\321]/g, /[\361]/g, // N, n
+							        /[\307]/g, /[\347]/g, // C, c
+							    ];
+							    var noaccent = ['A','a','E','e','I','i','O','o','U','u','N','n','C','c'];
+							     
+							    var str = this;
+							    for(var i = 0; i < accent.length; i++){
+							        str = str.replace(accent[i], noaccent[i]);
+							    }
+							     
+							    return str;
+							}
+
+							function chiffrer(){
+							  //On chiffre tous les champs pour éviter les problèmes d'encodage avant d'envoyer dans la base de données
+
+							  $('#titre').val($('#titre').val().sansAccent());
+							  return true;
+							}
+								    
+	    
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	    </script>
 
 </body>

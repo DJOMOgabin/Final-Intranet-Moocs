@@ -37,8 +37,16 @@
     <body class="hold-transition skin-blue sidebar-mini">
 	<%@ include file="entete2.jsp" %>            <!-- Graphe -->
             <!--#########################################################################  -->
+<<<<<<< HEAD
             <%  String id1 = request.getParameter("id");
                 String titre = request.getParameter("titre");
+=======
+            <%
+
+                String id1 = request.getParameter("id");
+                String titre = request.getParameter("titre");
+               
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
                 String code = devoirBean.getCode(id1 == null ? null : Integer.valueOf(id1));
                 out.print("<input type=\"text\" class=\"hidden\" id =\"titre\" value=\"" + titre + "\"/>" + "\n");
             %>
@@ -77,10 +85,17 @@
             
                 <section class="content">
                     <div class="row">
+<<<<<<< HEAD
                         <div class="col-md-5 col-lg-5">
                             <div class="box box-info">
                                 <div class="box-header">
                                     <h3 class="box-title"><i class="fa fa-bar-chart"></i> FREQUENCE DES NOTES</h3>
+=======
+                        <div class="col-md-6 col-lg-6 col-md-12 col-xs-12">
+                            <div class="box box-info">
+                                <div class="box-header">
+                                    <h3 class="box-title"><i class="fa fa-bar-chart"></i> FREQUENCE DES NOTES NOTES</h3>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
                                 </div>
                                 <div class="box-body">
                                     <div id="graph" style="height: 300px">
@@ -92,7 +107,11 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="col-md-7 col-lg-7">
+=======
+                        <div class="col-md-6 col-lg-6 col-md-12 col-xs-12">
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
                             <div class="box box-info">
                                 <div class="box-header with-border">
                                     <h3 class="box-title"><i class="fa fa-table"></i> TABLEAU RECAPITULATIF DES DEVOIRS</h3>
@@ -100,6 +119,7 @@
                                 <div class="box-body">
                                     <div class="table-responsive">
                                         <table id="table_id" class="table table-striped table-bordered table-hover display">
+<<<<<<< HEAD
                                             <thead>
                                                 <tr>
                                                     <th> # </th>
@@ -118,18 +138,73 @@
 				            						<td> <center><%=list.get(i).getNoteMoyenne()%></center></td>                                            
 	                                            </tr>
                                             <%}%>
+=======
+
+                                            <thead>
+                                                <tr>
+                                                    <th> # </th>
+                                                    <th>  MATIERE   </th>
+                                                    <th>  # DEVOIR </th>
+                                                    <th>#ETAT </th>
+                                                    <th># TAUX DE PARTICIPATION </th>
+                                                    <th># FREQUENCE DES NOTES </th>
+
+                                                </tr>
+
+                                            </thead>
+
+                                            <tbody>
+
+                                                <%
+                                                
+                                                List<Devoir> listd = devoirBean.getDevoirBD();
+                                                    Cours s = new Cours();
+                                                  
+                                                    for (int i = 0; i < listd.size(); i++) {%>
+
+                                                <tr class="<%=i % 2 == 0 ? "success" : "info"%>">
+
+                                                    <td><%=i + 1%></td>
+                                                    <td><%=connecteurForum.getNomCoursID(listd.get(i).getIdCours())%></td>
+
+                                                    <td><%=listd.get(i).getTypeDevoir()%></td>
+
+                                                    <td><%=listd.get(i).getEtat()%></td>
+
+                                                    <td><%=devoirBean.getnombreParticipant(listd.get(i).getIdDevoir())%></td>
+                                                    <td> <a href="stat_devour_controle.jsp?id=<%=listd.get(i).getIdDevoir()%>"><span title="Voir la fréquence des notes" class="glyphicon glyphicon-stats"></span></a></td>
+                                                </tr>
+                                                <%} %>
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
                                             </tbody>
 
                                         </table>
                                     </div>
                                     <br/>
                                     <a href="#" id="imprime" class="pull-right btn btn-success"> IMPRIMER <i class="fa fa-print"></i></a>
+<<<<<<< HEAD
                                 </div>
                             </div>
                         </div>
                     </div>		
     <%@include file="../footer.jsp" %>
         <!-- /#wrapper -->
+=======
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>		
+                
+    <%@include file="../footer.jsp" %>
+    
+
+        <!-- /#wrapper -->
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
         <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
 
 

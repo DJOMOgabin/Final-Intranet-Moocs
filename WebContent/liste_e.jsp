@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%if(session.getAttribute("user")==null && session.getAttribute("enseignant")==null){%><jsp:forward page="home.jsp?page=index.jsp"/><%}else{ %>
+=======
+<%if(session.getAttribute("user")==null){%><jsp:forward page="home.jsp?page=index.jsp"/><%}else{ %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <%@ include file = "WEB-INF/jspf/bean/utilisateurMooc.jspf"%>
 <%@ include file = "WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file = "WEB-INF/jspf/bean/courMoocs.jspf" %>
@@ -6,7 +10,11 @@
 
 <%@ include file = "WEB-INF/jspf/bean/connecteurforum.jspf"%>
 <%@ page import = "java.util.ArrayList,java.sql.Timestamp,java.sql.Time, Modele.CopieEtudiant,
+<<<<<<< HEAD
 Modele.Cours, Modele.constante,Modele.Examen,Modele.Epreuve,Controleur.RechercheCopie,Modele.Devoirs" %>
+=======
+Modele.Cours, Modele.constante,Modele.Examen,Modele.Epreuve,Controleur.RechercheCopie" %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <!DOCTYPE html>
 <html lang="en">
 <%
@@ -16,6 +24,10 @@ Modele.Cours, Modele.constante,Modele.Examen,Modele.Epreuve,Controleur.Recherche
 		String title = request.getParameter("title");
 		Cours cours = new Cours(); 
 		cours.setTitreCours(title);
+<<<<<<< HEAD
+=======
+		System.out.println(cours.getTitreCours()+"\n"+cours.getNombreSemainesCoursBD());
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		courMoocs.setTitreCours(title);
 %>
 <head>
@@ -44,11 +56,15 @@ Modele.Cours, Modele.constante,Modele.Examen,Modele.Epreuve,Controleur.Recherche
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+<<<<<<< HEAD
     <%if(session.getAttribute("enseignant")!=null){%>
 		<%@ include file="enteteAperçu.jsp" %>
 	<%}else{ %>
 		<%@ include file="entete_e.jsp"%>
 	<%} %>
+=======
+    <%@include file="entete_e.jsp" %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <section class="content">
 		<div class="row">
 			<div class="col-xs-12">
@@ -81,6 +97,10 @@ Modele.Cours, Modele.constante,Modele.Examen,Modele.Epreuve,Controleur.Recherche
 				 copie.setIdEtudiant(userMooc.getId()+"");
 				 copie.setNomEpreuve(examen.getList().get(i).getNomExam());
 				 copie.setDuree(examen.getList().get(i).getDuree());
+<<<<<<< HEAD
+=======
+				 System.out.println("j'ai créé la copie "+copie);
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			 }else{
 				 double duree = examen.getList().get(i).getDuree()-copie.getDuree();
 				 if(duree>0){
@@ -91,15 +111,24 @@ Modele.Cours, Modele.constante,Modele.Examen,Modele.Epreuve,Controleur.Recherche
 			 }
 			 copie.setTotalTentative(examen.getList().get(i).getEssai());
 			 copie.dispo();
+<<<<<<< HEAD
+=======
+			 System.out.println(copie.isPossible()+" "+copie.getTotalTentative()+" "+copie.getNombreTentative());
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			 copies.add(copie);
 			%>
 				<div class="row" data-nomepreuve="<%=examen.getList().get(i).getNomExam()%>"
 				data-nombre="<%=copies.get(i).reste()%>">
+<<<<<<< HEAD
+=======
+				<%System.out.println(examen.getList().get(i).getEssai());%>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				<%if(copies.get(i).getNombreTentative()!=0){%>
 					<div class="deja">
 				<%}else{%>
 					<div class="compo">
 				<%}%>
+<<<<<<< HEAD
 					<div class="btn col-xs-12">
 					<%
 					if(examen.getList().get(i).isVue()){
@@ -116,10 +145,30 @@ Modele.Cours, Modele.constante,Modele.Examen,Modele.Epreuve,Controleur.Recherche
 									<strong><%=copies.get(i).getNote() %>/<%=examen.getList().get(i).getMax() %> </strong>  
 									</div>
     						<%}%>
+=======
+						<div class="btn col-xs-12">
+					<%
+					System.out.println(examen.getList().get(i).getMinute()+" minute");
+					System.out.println(copie.getNomEpreuve()+" nombre: "+copie.getNombreTentative());
+					if(examen.getList().get(i).isVue()){
+						compteur++;
+						System.out.println(examen.getList().get(i).getMax());
+					%>
+						<div type="submit" class="alert alert-info alert-dismissible">
+			    			<div><strong ><%=examen.getList().get(i).getNomExam() %></strong> </div>			    			
+							<%if(copies.get(i).getNote()>=examen.getList().get(i).getMax()/2){ %>
+								<div class="col-xs-2" style="color:green">
+							<%}else{ %>
+								<div class="col-xs-2" style="color:red">							
+							<%} %>
+								<strong><%=copies.get(i).getNote() %>/<%=examen.getList().get(i).getMax() %> </strong>  
+								</div>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 							<div class="col-xs-2" style="color:red">
 								<div><small>Durée : <%=examen.getList().get(i).getDuree() %> h</small> </div>  
 							</div>
 							<div class="col-xs-2" ></div>
+<<<<<<< HEAD
 							
     						<%if(session.getAttribute("enseignant")==null){%>
 								<div class="col-xs-3">
@@ -140,6 +189,20 @@ Modele.Cours, Modele.constante,Modele.Examen,Modele.Epreuve,Controleur.Recherche
 							    	<div><strong>Tentative : <%=copies.get(i).getTotalTentative() %></strong> </div>  
 								</div>
 			        		<%}%>
+=======
+							<div class="col-xs-3">
+					    		<div><i class="fa fa-hourglass-half"></i> <small>Restant : <%=examen.StringDuree(i) %></small> </div>  
+							</div>
+							<%if(copies.get(i).getNombreTentative()<copies.get(i).getTotalTentative()){ %>
+								<div class="col-xs-3" style="color:black">
+							<%}else{ %>
+								<div class="col-xs-3" style="color:red">							
+							<%} %>
+						    		<div><strong>Tentative : <%=copies.get(i).getNombreTentative() %>
+						    		/<%=copies.get(i).getTotalTentative() %></strong> </div>  
+								</div>    
+			         	</div>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			        <%}%>
 					</div>	
 				</div>						
@@ -222,6 +285,7 @@ function VoirEpreuve(nomMatiere,nomEpreuve,nombreTentative){
 		alert("Vous ne pouvez pas composer soit le temps est nul, soit le nombre de tentative est nul");
 	}
 }
+<<<<<<< HEAD
 
 function AperEpreuve(nomMatiere,nomEpreuve,nombreTentative){
 	var nomepreuve = unescape(nomEpreuve);
@@ -250,6 +314,17 @@ function AperEpreuve(nomMatiere,nomEpreuve,nombreTentative){
 		AperEpreuve(nomCours,$(row).data('nomepreuve'),$(row).data('nombre'));
 	});
 <%}%>	
+=======
+$(".compo").click(function(){
+	var row = $(this).closest(".row");
+	VoirEpreuve(nomCours,$(row).data('nomepreuve'),$(row).data('nombre'));
+});
+
+$(".deja").click(function(){
+	var row = $(this).closest(".row");
+	VoirDeja(nomCours,$(row).data('nomepreuve'),$(row).data('nombre'));
+});
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 $('#liste').DataTable({
 
 	 "paging": true,

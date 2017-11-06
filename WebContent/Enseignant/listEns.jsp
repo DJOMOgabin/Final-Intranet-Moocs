@@ -135,6 +135,10 @@
     
 
 <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<<<<<<< HEAD
+=======
+    <script type = "text/javascript" src ="../js/js.js"></script>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 
 <!-- Bootstrap 3.3.5 -->
 <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -160,7 +164,10 @@
 <script src="../dist/js/demo.js"></script>
 
 <script>
+<<<<<<< HEAD
 <%@include file="chemin.jsp" %>
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 
 	$('#apropos').click(function(){
 

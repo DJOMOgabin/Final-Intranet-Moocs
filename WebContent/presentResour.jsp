@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 <%if(session.getAttribute("user")==null && session.getAttribute("enseignant")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
+=======
+<%if(session.getAttribute("user")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <%@ include file = "WEB-INF/jspf/bean/utilisateurMooc.jspf"%>
 <%@ include file = "WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file = "WEB-INF/jspf/bean/courMoocs.jspf" %>
 
 <%@ include file = "WEB-INF/jspf/bean/connecteurforum.jspf"%>
+<<<<<<< HEAD
 <%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante,Modele.Devoirs" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +16,20 @@
 		String title = request.getParameter("title");
 		courMoocs.setTitreCours(title);
 		Cours cours = courMoocs;
+=======
+<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante" %>
+<!DOCTYPE html>
+<html lang="en">
+<%
+	if(request.getParameter("title")!=null)
+	{
+		
+		String title = request.getParameter("title");
+		Cours cours = new Cours(); 
+		cours.setTitreCours(title);
+		System.out.println(cours.getTitreCours()+"\n"+cours.getNombreSemainesCoursBD());
+		courMoocs.setTitreCours(title);
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 %>
 <head>
   <meta charset="utf-8">
@@ -48,11 +67,15 @@
 </head>
  
 <body class="hold-transition skin-blue sidebar-mini">
+<<<<<<< HEAD
     <%if(session.getAttribute("enseignant")!=null){%>
 		<%@ include file="enteteAperçu.jsp" %>
 	<%}else{ %>
 		<%@ include file="entete_e.jsp" %>
 	<%} %>
+=======
+	<%@include file="entete2_e.jsp" %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	<section class="content">
 	
 		<div class="row">
@@ -68,7 +91,12 @@
 
               <p class="text-muted text-center"><%=cours.getNombreSemainesCoursBD() %> semaine<%=(cours.getNombreSemainesCoursBD()>1)?"s":"" %> </p>
              	<div class="box-group" id="accordion">
+<<<<<<< HEAD
              		<%for(int i = 1; i<=cours.getNombreSemainesCoursBD();i++){ int count = 1;%>             		 
+=======
+             		<%for(int i = 1; i<=cours.getNombreSemainesCoursBD();i++){ int count = 1;%>
+             		 
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
              	<div class="panel box box-primary">
                   <div class="box-header with-border">
                     <h4 class="box-title">
@@ -91,12 +119,21 @@
                     </div>
                   </div>
                 </div>
+<<<<<<< HEAD
              	<%} %>
+=======
+             		
+             		<%} %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
              	</div>
             </div>
             <!-- /.box-body -->
           </div>
           </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
           <div class="col-md-9">
           	<div class="embed-responsive embed-responsive-16by9">
      				<iframe class="embed-responsive-item" src="cours/video/<%=request.getParameter("video")%>" controls autoplay="false" frameborder="0" allowfullscreen></iframe>
@@ -125,7 +162,11 @@
         						<i class="fa fa-file-pdf-o bg-blue"></i>
         						<div class="timeline-item">
 						        	<span class="pull-right"><a href="cours/complement/<%=complement%>" style="margin-right:2px;" download="<%=cours.getTitreCours()%>.Semaine-<%=(i+1)%>.<%=video %>.complement-<%=count+1%>" title="Télécharger cette vidéo" type="button" class="btn btn-flat btn-success"><i class="fa fa-huge fa-download"></i></a></span> 
+<<<<<<< HEAD
 						        	<h3 class="timeline-header"><a href="cours/complement/<%=complement%>" target="_blank"><%=complement %></a> </h3>
+=======
+						        	<h3 class="timeline-header"><a href="cours/complement/<%=complement%>"><%=complement %></a> </h3>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 								</div>						
 							</li>
 							<%count++;}%>
@@ -197,4 +238,8 @@ $('#description').readmore({
 </script>
 </body>
 </html>
+<<<<<<< HEAD
+=======
+<%} %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <%} %>

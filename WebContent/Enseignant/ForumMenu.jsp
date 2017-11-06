@@ -46,7 +46,11 @@ Modele.Devoirs,java.sql.SQLException,Traitement.PaireString,java.sql.ResultSet" 
 	         	</div>
 			</div>
 		</div>
+<<<<<<< HEAD
 		<%
+=======
+		<% 
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			String id = LectEcriForum.getCours(request.getParameter("title"));
 			ArrayList<String> forum= new ArrayList<String>();
 			ArrayList<String> string=new ArrayList<String>();
@@ -64,7 +68,12 @@ Modele.Devoirs,java.sql.SQLException,Traitement.PaireString,java.sql.ResultSet" 
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+<<<<<<< HEAD
 			for (int i=0;i<forum.size();i++){%>
+=======
+			for (int i=0;i<forum.size();i++){
+		%>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			<script type="text/javascript">
 				var idCours = <%=id%>;
 				var nomCours = escape("<%=request.getParameter("title")%>");
@@ -111,6 +120,10 @@ Modele.Devoirs,java.sql.SQLException,Traitement.PaireString,java.sql.ResultSet" 
 			</div>
     <%@include file="../footer.jsp" %>
     <script type = "text/javascript" src ="../js/script.js"></script>
+<<<<<<< HEAD
+=======
+    <script type = "text/javascript" src ="../js/js.js"></script>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	
 	<!-- jQuery 2.1.4 -->
 	<script src="././jQuery-3.1.1.min.js"></script>
@@ -143,12 +156,19 @@ Modele.Devoirs,java.sql.SQLException,Traitement.PaireString,java.sql.ResultSet" 
 <script src="../dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
+<<<<<<< HEAD
 <script type="text/javascript" src="../js/MathJax.js?config=AM_HTMLorMML-full"></script>
+=======
+<script type="text/javascript" src="../MathJax/MathJax.js?config=AM_HTMLorMML-full"></script>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <script src="http://vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js"></script>
 <script src="http://vjs.zencdn.net/5.2.2/video.js"></script>
 <script src="../dist/js/readmore.js"></script>
 <script>
+<<<<<<< HEAD
 <%@include file="chemin.jsp" %>
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 $('#none').hide(); 
 $("#newlink").submit(function(e){
 	$("#soumettre").attr("disable",true);
@@ -188,6 +208,10 @@ function supprimer(id,theme)
 	console.log("start");
 	$(".supprimer").click(function(){
 		var row = $(this).closest(".row");
+<<<<<<< HEAD
+=======
+		console.log($(row).data('nomforum'));
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		supprimer(idCours,$(row).data('nomforum'));
 	});
 	
@@ -209,6 +233,10 @@ function supprimer(id,theme)
 				url:chemin+'forum',
 				type:'POST',
 				data:"type=create&id="+id+"&theme="+theme,
+<<<<<<< HEAD
+=======
+				//dataType:'json',
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				
 				success:function(code_html,statut){
 					if(code_html=='true'){
@@ -220,7 +248,14 @@ function supprimer(id,theme)
 				},		
 				error : function(resultat, statut, erreur){
 					 alert("Nous n'avons pas pu créer le sujet, un problème est survenu");
+<<<<<<< HEAD
 			    }
+=======
+			    },
+				/*complete : function(resultat,statut){
+					
+				}*/
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			});
 		}
 	}

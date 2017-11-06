@@ -45,6 +45,10 @@
 			</div>
 		</div>
 		<%
+<<<<<<< HEAD
+=======
+			System.out.println(request.getParameter("epreuve")+" epreuve");
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			if(request.getParameter("epreuve")!=null){
 				System.out.println("Suppression");
 		    	Examen.supprimer(request.getParameter("title"), 
@@ -190,6 +194,10 @@ function supprimer(cours,epreuve)
 	console.log("start");
 	$(".supprimer").click(function(){
 		var row = $(this).closest(".row");
+<<<<<<< HEAD
+=======
+		console.log("Click supprimer");
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		supprimer(nomCours,$(row).data('nomepreuve'));
 	});
 

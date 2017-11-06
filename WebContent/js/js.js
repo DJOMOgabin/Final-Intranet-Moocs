@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 });
 
+<<<<<<< HEAD
+=======
+var currentLocation = document.location.href;
+var current = currentLocation.substring(currentLocation.indexOf("/",10),currentLocation.lastIndexOf("/"))+"/";
+current = current.substring(0,current.indexOf("/",3));
+var chemin = current+'/';
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 currentLocation = 'ws'+currentLocation.substring(currentLocation.indexOf(":",0),currentLocation.indexOf("/",9))+"/"+chemin;
 var websocket = new WebSocket(currentLocation+"echange ");
 	function forumenvoi(id,cours,theme){
@@ -12,6 +19,10 @@ var websocket = new WebSocket(currentLocation+"echange ");
 		}
 	}
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	function conversation(nom,text,heure,prop,cours,them){
 		var title = $("#title").val();
 		var theme = $("#theme").val();

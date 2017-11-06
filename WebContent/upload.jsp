@@ -29,14 +29,31 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
     <!-- If you'd like to support IE8 -->
+<<<<<<< HEAD
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+=======
+
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 </head>
 <%
 	String title = request.getParameter("title");
 	Cours cours = new Cours(); 
 	cours.setTitreCours(title);
 	courMoocs.setTitreCours(title);
+<<<<<<< HEAD
 	// onsubmit="nom()"
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 %>
 <body class="hold-transition skin-blue sidebar-mini">
 	<%@include file="entete_e.jsp" %>
@@ -47,7 +64,10 @@
 				<div class="alert alert-info alert-dismissible">
 					<h4><i class="icon fa fa-info-circle"></i> Nouveau devoir  <i class="fa fa-book"></i> </h4>
 					Veuillez remplir les informations sur le devoir , puis cliquez sur <b> Envoyer </b>
+<<<<<<< HEAD
 					<div class="pull-right">Ne pas mettre d'<b style="color:red;">Apostrophe</b> dans le nom du devoir.</div>
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
          		</div>
 			</div>
 		</div>
@@ -57,12 +77,19 @@
 				<div class="box box-info">
 				
 					<!-- FORMULAIRE -->
+<<<<<<< HEAD
 					<form id="newcourse" action="uploadDevoir.jsp?title=<%=title%>" method="post" 
 					class="form-horizontal" enctype="multipart/form-data" onsubmit="return nom(escape('<%=title%>'))">
+=======
+					<form id="newcourse" action="upload" enctype="multipart/form-data" method="post" class="form-horizontal">
+						<input name="title" type="hidden" value="<%=request.getParameter("title")%>">
+						<input name="ancien" type="hidden" value="<%=Upload.cheminNew%>">
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 						<div class="box-body">
 							<div class="form-group">
 								<label for="titre" class="col-sm-2 control-label">TITRE DU DEVOIR</label>
 								<div class="col-sm-3">
+<<<<<<< HEAD
 									<input type="text" formmethod="get" autofocus required onkeypress="" 
 									class="form-control" id="titre" placeholder="TITRE DU DEVOIR ... ">
 									<span class="succes"></span>
@@ -85,6 +112,32 @@
             </div>
 		</section>	
     <%@include file="footer.jsp" %>  
+=======
+									<input type="text" autofocus required onkeypress="" class="form-control" name="titre" id="titre" placeholder="TITRE DU DEVOIR ... ">
+									<span class="succes"> <% %> </span>
+                  				</div>
+               					<label for="fichier" class="col-sm-2 control-label"> Veuillez selectionner le fichier</label>
+               					<div class="col-sm-3">
+                    				<input type="file" id="fichier"  class="form-control" name="fichier"/>
+                  				</div>
+				  			</div>           
+                  			<div class="form-group">
+                  				<div class="col-sm-3">
+                	 			 </div>
+         	 					<div class="col-sm-2" id="send_button">
+                 	  				<button type="submit" class="btn btn-block btn-info" id="upload"> ENVOYER  <i class="fa fa-spinner fa-spin" id="none"></i> </button>
+								</div>
+                 			 </div>
+                 			</div>
+                 	</form>	
+                 	</div>
+                </div>
+              </div>
+			</section>	
+
+    <%@include file="footer.jsp" %>
+    
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 
 <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
 <script src="dist/js/readmore.js"></script>
@@ -120,6 +173,7 @@ $('#description').readmore({
 	  moreLink : '<a href="#"> Lire la suite ...</a>',
 	  lessLink: '<a href="#">Retirer</a>'
 	});
+<<<<<<< HEAD
 $("#none").hide();
 $("#newcourse").submit(function(e){
 	$("#soumettre").attr("disable",true);
@@ -131,6 +185,9 @@ $("#newcourse").submit(function(e){
 	    $("#newcourse").attr("action","uploadDevoir.jsp?title="+title+"&titre="+$("#titre").val());
 	    return true;
 	}
+=======
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 </script>
 
 </body>

@@ -26,7 +26,10 @@
 <head>
   <meta http-equiv="Content-Type" charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< HEAD
   <!--meta http-equiv="refresh" content="5;/Intra/Enseignant/index.jsp"-->
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
   <title>INTRANET MOOCs| Enseignant</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -82,14 +85,25 @@
 			request.setAttribute("tentative", request.getParameter("tentative"));
 			request.setAttribute("indicative", request.getParameter("indicative"));
 			request.setAttribute("title", request.getParameter("title"));
+<<<<<<< HEAD
 		}
+=======
+			
+
+			
+		}
+		System.out.println(request.getAttribute("title"));
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		%>
 		<div class="row">
 			<div class="col-md-12">
 				<div class="alert alert-info alert-dismissible">
 	    			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	                <h4><i class="icon fa fa-info-circle"></i> Créez votre épreuve à votre convenance</h4>
+<<<<<<< HEAD
 					<div class="pull-right">Ne pas mettre de <b style="color:red;">Charactères spéciaux</b> dans le champ du titre.</div>	                
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	         	</div>
 			</div>
 		</div>
@@ -264,7 +278,11 @@
      
     <%@include file="../footer.jsp" %>
     
+<<<<<<< HEAD
 	<script><%@include file="accent.jsp"%></script>
+=======
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     <script type = "text/javascript" src ="../js/script.js"></script>
 	
 	<!-- jQuery 2.1.4 -->
@@ -317,6 +335,10 @@ $("#newlink").submit(function(e){
 	$("#go").hide();
 	$("#none").show();
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	function decodage(){
 		var arrays = $('textarea');
 		var exercice = $('.exercice');

@@ -41,7 +41,10 @@
 				<div class="alert alert-info alert-dismissible">
 	    			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	                <h4><i class="icon fa fa-info-circle"></i> Créez votre épreuve à votre convenance</h4>
+<<<<<<< HEAD
 					<div class="pull-right">Ne pas mettre de <b style="color:red;">Charactères spéciaux</b> dans le champ du titre.</div>
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	         	</div>
 			</div>
 		</div>
@@ -184,7 +187,11 @@
 	
      
     <%@include file="../footer.jsp" %>
+<<<<<<< HEAD
 	<script><%@include file="accent.jsp"%></script>
+=======
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     <script type = "text/javascript" src ="../js/script.js"></script>
 	
 	<!-- jQuery 2.1.4 -->

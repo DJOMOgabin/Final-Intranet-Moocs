@@ -9,7 +9,11 @@
 <title>Insert title here</title>
 <script>history.forward();</script>
 <%if(session.getAttribute("enseignant")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
+<<<<<<< HEAD
 <!--meta http-equiv="refresh" content="1;present.jsp?title=<%=request.getParameter("title")%>"-->
+=======
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 </head>
 <body>
 
@@ -35,6 +39,7 @@ while(itr.hasNext())
 			File fullFile=new File(item.getName());
 			System.out.println(getServletContext().getRealPath("/"));
 			
+<<<<<<< HEAD
 			System.out.println(item.getContentType());			
 		 
 			if(item.getContentType().equals("application/pdf"))
@@ -49,6 +54,23 @@ while(itr.hasNext())
 			}
 			if(item.getContentType().equals("application/msword")||
 					item.getContentType().equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
+=======
+			System.out.println(item.getContentType());
+			
+		 
+			if(item.getContentType().equals("application/pdf"))
+			{
+		
+			File uploadDir = new File(getServletContext().getRealPath("/")+"cours/complement/");
+			File savedFile = File.createTempFile("complement", ".pdf", uploadDir);
+			item.write(savedFile);
+		
+			teacher.ajouterComplement(savedFile.getName(), request.getParameter("video"));
+		
+			
+			}
+			if(item.getContentType().equals("application/msword"))
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			{
 		
 			File uploadDir = new File(getServletContext().getRealPath("/")+"cours/complement/");
@@ -66,7 +88,13 @@ while(itr.hasNext())
 			File savedFile = File.createTempFile("complement", ".epub", uploadDir);
 			item.write(savedFile);
 		
+<<<<<<< HEAD
 			teacher.ajouterComplement(savedFile.getName(), request.getParameter("video"));			
+=======
+			teacher.ajouterComplement(savedFile.getName(), request.getParameter("video"));
+		
+			
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			}
 			if(item.getContentType().equals("application/mp4"))
 			{

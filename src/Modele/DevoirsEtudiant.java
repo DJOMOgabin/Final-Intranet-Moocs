@@ -1,13 +1,20 @@
 package Modele;
 
 import java.sql.Connection;
+<<<<<<< HEAD
+=======
+import java.sql.DriverManager;
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 import controlleur.Connecteur;
 
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 public class DevoirsEtudiant {
 	private ArrayList<String> vue = new ArrayList<String>();
 	private ArrayList<String> date = new ArrayList<String>();
@@ -45,19 +52,31 @@ public class DevoirsEtudiant {
 		return nomDevoir;
 	}
 
+<<<<<<< HEAD
 	@SuppressWarnings("static-access")
 	public void setNomDevoir(String nomDevoir) {
 		this.nomDevoir=nomDevoir;
+=======
+	public void setNomDevoir(String nomDevoir) {
+		this.nomDevoir = nomDevoir;
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	}
 
 	public String getCheminDevoir() {
 		return cheminDevoir;
 	}
 
+<<<<<<< HEAD
 	@SuppressWarnings("static-access")
 	public void setCheminDevoir(String chemin) {
 		this.cheminDevoir = chemin;
 	}
+=======
+	public void setCheminDevoir(String cheminDevoir) {
+		this.cheminDevoir = cheminDevoir;
+	}
+	
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	public DevoirsEtudiant(){
 		
 	}
@@ -71,6 +90,10 @@ public class DevoirsEtudiant {
 	}
 	public DevoirsEtudiant(String nomCours, String matricule){
 		DevoirsEtudiant.nomCours = nomCours;
+<<<<<<< HEAD
+=======
+		this.matriculeEtudiant=matricule;
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		this.idCours = getIdCours();
 		initialisation();
 	}
@@ -87,10 +110,26 @@ public class DevoirsEtudiant {
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
+<<<<<<< HEAD
 	public static Connection ouvrirBD() throws SQLException,ClassNotFoundException
 	{
 		return Connecteur.FaireConn();
 		
+=======
+	public static Connection ouvrirBD() throws SQLException,ClassNotFoundException{
+		Connection conn=null;
+		
+		try{
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			conn=DriverManager.getConnection("jdbc:mysql://localhost/intranet_mooc?useUnicode=true&;characterEncoding=utf8","root","root");	
+		}catch(SQLException e){
+			
+		}catch(ClassNotFoundException e){
+			throw new ClassNotFoundException("Erreur\nDetails "+e.getMessage());
+		}
+		return conn;	
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	}
 	
 	/**
@@ -98,6 +137,7 @@ public class DevoirsEtudiant {
 	 */
 	public void initialisation(){
 		try{
+<<<<<<< HEAD
 			 
 			ResultSet result;
 			Statement prep = ouvrirBD().createStatement();
@@ -105,6 +145,16 @@ public class DevoirsEtudiant {
 			
 			query = "select devoir.nomdevoir nom, devoir.dateenvoie date, devoir.vue seen, devoir.note note,"
 					+ "devoir.liendevoir lien from devoir where idetudiant = '"+getIdEtudiant()+"'and etudiant='true' and "
+=======
+			
+			Connection conn = ouvrirBD(); 
+			ResultSet result;
+			Statement prep = conn.createStatement();
+			String query;
+			
+			query = "select devoir.nomdevoir nom, devoir.dateenvoie date, devoir.vue seen, devoir.note note,"
+					+ "devoir.liendevoir lien from devoir where idetudiant = '"+getIdEtudiant()+"' and "
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 					+ "idcours = (select cours.idcours from cours where titrecours = '"+getNomCours()+"');";
 			result = prep.executeQuery(query);
 			while(result.next()){
@@ -117,6 +167,10 @@ public class DevoirsEtudiant {
 			
 			result.close();
 			prep.close();
+<<<<<<< HEAD
+=======
+			conn.close();
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			
 		}catch(SQLException ex)
 		{
@@ -134,12 +188,25 @@ public class DevoirsEtudiant {
 	 */
 	public static void chargerDevoir(DevoirsEtudiant devoirEtudiant){
 		try{
+<<<<<<< HEAD
 			Statement prep = ouvrirBD().createStatement();
 			String query;
 			query = "insert into devoir (note,idcours, idetudiant, nomdevoir, liendevoir) values "
 					+ "('No Note','"+devoirEtudiant.getIdCours()+"', '"+devoirEtudiant.getIdEtudiant()+"', '"+devoirEtudiant.getNomDevoir()+"', '"+devoirEtudiant.getCheminDevoir()+"');";
 			prep.executeUpdate(query);
 			prep.close();			
+=======
+			Connection conn = ouvrirBD(); 
+			int result;
+			Statement prep = conn.createStatement();
+			String query;
+			query = "insert into devoir (idcours, idetudiant, nomdevoir, liendevoir) values "
+					+ "('"+devoirEtudiant.getIdCours()+"', '"+devoirEtudiant.getIdEtudiant()+"', '"+devoirEtudiant.getNomDevoir()+"', '"+devoirEtudiant.getCheminDevoir()+"');";
+			result = prep.executeUpdate(query);
+			prep.close();
+			conn.close();
+			
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		}catch(SQLException ex){
 			System.out.println(ex.getMessage());
 		}catch(ClassNotFoundException ex){
@@ -148,15 +215,27 @@ public class DevoirsEtudiant {
 	}
 	
 	public void devoirsEnseignant(int idCours){
+<<<<<<< HEAD
 		try{
 			ResultSet result;
 			Statement prep = ouvrirBD().createStatement();
+=======
+try{
+			
+			Connection conn = ouvrirBD(); 
+			ResultSet result;
+			Statement prep = conn.createStatement();
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			String query;
 			
 			query = "select devoir.iddevoir id, devoir.nomdevoir titre, devoir.dateenvoie date, devoir.note note, devoir.liendevoir lien, "
 					+ "devoir.vue seen, etudiant.matricule matricule, etudiant.nom nom from devoir join etudiant on "
 					+ "devoir.idetudiant = etudiant.idetudiant "
+<<<<<<< HEAD
 					+ "where devoir.idcours = '"+idCours+"' and enseignant='true';";
+=======
+					+ "where devoir.idcours = '"+idCours+"';";
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			result = prep.executeQuery(query);
 			while(result.next()){
 				
@@ -173,6 +252,10 @@ public class DevoirsEtudiant {
 			
 			result.close();
 			prep.close();
+<<<<<<< HEAD
+=======
+			conn.close();
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			
 		}catch(SQLException ex)
 		{
@@ -194,13 +277,22 @@ public class DevoirsEtudiant {
 	public void updateVue(int idDevoir, String s){
 		try{
 			
+<<<<<<< HEAD
 			Statement prep = ouvrirBD().createStatement();
+=======
+			Connection conn = ouvrirBD(); 
+			Statement prep = conn.createStatement();
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			String query;
 			
 			query = "update devoir set vue = '"+s+"' where iddevoir = '"+idDevoir+"';";
 			prep.executeUpdate(query);
 			
 			prep.close();
+<<<<<<< HEAD
+=======
+			conn.close();
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			
 		}catch(SQLException ex)
 		{
@@ -214,13 +306,22 @@ public class DevoirsEtudiant {
 	public void updateNote(int idDevoir, String note){
 		try{
 			
+<<<<<<< HEAD
 			Statement prep = ouvrirBD().createStatement();
+=======
+			Connection conn = ouvrirBD(); 
+			Statement prep = conn.createStatement();
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			String query;
 			
 			query = "update devoir set note = '"+note+"' where iddevoir = '"+idDevoir+"';";
 			prep.executeUpdate(query);
 			
 			prep.close();
+<<<<<<< HEAD
+=======
+			conn.close();
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			
 		}catch(SQLException ex)
 		{
@@ -273,8 +374,14 @@ public class DevoirsEtudiant {
 
 	public int getIdCours() {
 		try{
+<<<<<<< HEAD
 			ResultSet result;
 			Statement prep = ouvrirBD().createStatement();
+=======
+			Connection conn = ouvrirBD(); 
+			ResultSet result;
+			Statement prep = conn.createStatement();
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			String query;
 			
 			query ="select cours.idcours from cours where titrecours = '"+getNomCours()+"'";
@@ -309,6 +416,13 @@ public class DevoirsEtudiant {
 		return nomCours;
 	}
 
+<<<<<<< HEAD
+=======
+	public void setNomCours(String nomCours) {
+		this.nomCours = nomCours;
+	}
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	public String getNomEtudiant() {
 		return nomEtudiant;
 	}
@@ -321,6 +435,13 @@ public class DevoirsEtudiant {
 		return matriculeEtudiant;
 	}
 
+<<<<<<< HEAD
+=======
+	public void setMatriculeEtudiant(String matriculeEtudiant) {
+		this.matriculeEtudiant = matriculeEtudiant;
+	}
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	public void setIdEtudiant(int idEtudiant) {
 		this.idEtudiant = idEtudiant;
 	}

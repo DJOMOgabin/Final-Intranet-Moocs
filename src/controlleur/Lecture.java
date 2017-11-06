@@ -25,6 +25,7 @@ public class Lecture{
 	}
 	
 	public static String Fichier(String nom){
+<<<<<<< HEAD
 		if(nom.equalsIgnoreCase("hibernate.cfg.xml")){
 			return nom;
 		}else {
@@ -43,6 +44,26 @@ public class Lecture{
 	 
 	//La fonction permet de lire dans le fichier config.djo, qui est le fichier de configuration de notre 
 	//base de donnï¿½es
+=======
+		 String className=Upload.class.getName().replaceAll("\\.", "/" )+".class";
+			URL classPath=Upload.class.getClassLoader().getResource(className);
+			File f=new File(classPath.getPath());
+			while(f!=null && !f.getName().equals("WEB-INF")){
+			 f=f.getParentFile();
+			}
+			if(f!=null)
+			 WEB_INF=f.getPath().replace('\\', '/');
+			String Path1 = WEB_INF.substring(0, WEB_INF.indexOf("WEB-INF")) + nom;
+			Path1 = Path1.replaceAll("%20", " ");
+			if(nom.equalsIgnoreCase("hibernate.cfg.xml")){
+				return nom;
+			}
+			else return Path1;
+	 }
+	 
+	//La fonction permet de lire dans le fichier config.djo, qui est le fichier de configuration de notre 
+	//base de données
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	 public void lecture(){
 		try {
 			String line,mot,value;
@@ -74,6 +95,7 @@ public class Lecture{
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			setEffectuer(false);
+<<<<<<< HEAD
 			setError("fichier introuvable, veuiller ï¿½ ce qu'il soit lï¿½. Merci");			
 		}		
 	}
@@ -82,6 +104,12 @@ public class Lecture{
 		String list = "";
 		list = nom.substring(nom.indexOf("."));
 		return list;
+=======
+			setError("fichier introuvable, veuiller à ce qu'il soit là. Merci");
+			
+		}
+		
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	}
 	
 	 public static String getUserName() {

@@ -32,6 +32,10 @@ public class LectEcriForum {
 		try {
 			if(create){
 				dossier.createNewFile();
+<<<<<<< HEAD
+=======
+				System.out.println("nom du cours : "+nomCours);
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				etat = Examen.CreerForum(nomCours, theme);
 			}else {
 				dossier.delete();
@@ -82,7 +86,11 @@ public class LectEcriForum {
 	}
 	
 	public static ArrayList<Forum> Lecture(String nomCours, String theme){
+<<<<<<< HEAD
 		ArrayList<Forum> text= new ArrayList<Forum>();
+=======
+		ArrayList<Forum> text= new ArrayList<>();
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		nomCours = getCours(nomCours);
 		try {
 			Scanner clavier = new Scanner(new FileInputStream(Lecture.Fichier(chemin+nomCours+"/"+theme.hashCode()+extension)));

@@ -178,6 +178,7 @@ public class EpreuveFinal extends HttpServlet {
 						juste4+=" <i class='fa fa-times'></i> ";
 					}
 				}
+<<<<<<< HEAD
 				string+="<div class='blocProposition'>"+
 							"<label "+style+" class='question'><b>"+(j+1)+") </b>"+epreuveProposition.getQuestion() +juste+"</label><p>"+
 							"<div class='row'>"+
@@ -213,6 +214,19 @@ public class EpreuveFinal extends HttpServlet {
 								"</div>"+
 								"</div><br><p>"+
 							"</div>";
+=======
+				string+="<div class='blocProposition' >";
+				string+="<label "+style+" class='question'><b>"+(j+1)+") </b>"+epreuveProposition.getQuestion() +juste+"</label><p>\n";
+				string+="<input class='proposition'"+choix1+" name='proposition"+i+j+"' type='radio' value='1'/> \n";
+				string+="<label"+style1+"> A ) "+epreuveProposition.getProposition().getPropo1() +juste1+"</label><br>\n";
+				string+="<input class='proposition'"+choix2+" name='proposition"+i+j+"' type='radio' value='2'/> \n";
+				string+="<label"+style2+"> B ) "+epreuveProposition.getProposition().getPropo2() +juste2+"</label><br>\n";
+				string+="<input class='proposition'"+choix3+" name='proposition"+i+j+"' type='radio' value='3'/> \n";
+				string+="<label"+style3+"> C ) "+epreuveProposition.getProposition().getPropo3() +juste3+"</label><br>\n";
+				string+="<input class='proposition'"+choix4+" name='proposition"+i+j+"' type='radio' value='4'/> \n";
+				string+="<label"+style4+"> D ) "+epreuveProposition.getProposition().getPropo4() +juste4+"</label><br>\n";
+				string+="</div>";
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			}
 		}
 		return string;

@@ -1,7 +1,11 @@
 <%if(session.getAttribute("enseignant")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
 <%@ include file = "../WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file= "/WEB-INF/jspf/bean/courMoocs.jspf" %>
+<<<<<<< HEAD
 <%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante,Modele.Devoirs" %>
+=======
+<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante" %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +38,11 @@
   <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+<<<<<<< HEAD
 	<%@ include file="entete.jsp" %>
+=======
+	<%@ include file="entete2.jsp" %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     <%int semaine = Integer.parseInt(request.getParameter("semaine")); %>    
 	<section class="content">
 		<div class="row">

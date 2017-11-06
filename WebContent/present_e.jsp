@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 <%if(session.getAttribute("user")==null && session.getAttribute("enseignant")==null){%><jsp:forward page="home.jsp?page=index.jsp"/><%}else{ %>
+=======
+
+<%if(session.getAttribute("user")==null){%><jsp:forward page="home.jsp?page=index.jsp"/><%}else{ %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <%@ include file = "WEB-INF/jspf/bean/utilisateurMooc.jspf"%>
 <%@ include file = "WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file = "WEB-INF/jspf/bean/courMoocs.jspf" %>
 
 <%@ include file = "WEB-INF/jspf/bean/connecteurforum.jspf"%>
+<<<<<<< HEAD
 <%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante,Modele.Devoirs" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +17,19 @@
 		String title = request.getParameter("title");
 		courMoocs.setTitreCours(title);
 		Cours cours = courMoocs; 
+=======
+<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante" %>
+<!DOCTYPE html>
+<html lang="en">
+<%
+	if(request.getParameter("title")!=null)
+	{
+		
+		String title = request.getParameter("title");
+		Cours cours = new Cours(); 
+		cours.setTitreCours(title);
+		courMoocs.setTitreCours(title);
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 %>
 <head>
   <meta charset="utf-8">
@@ -31,6 +50,7 @@
   <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+<<<<<<< HEAD
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -39,6 +59,23 @@
 	<%}else{ %>
 		<%@ include file="enteteAperçu.jsp"%>
 	<%} %>
+=======
+    <!-- If you'd like to support IE8 -->
+
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <%@include file="entete_e.jsp" %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
      <section class="content">
      	<!-- Présentation du titre et du logo -->
      	<div class="row">
@@ -68,7 +105,11 @@
                </article>
         	      Le lien d'&eacute;valuation de ce cours est <a href="<%=cours.getLienCoursBD()%>" target="blank"><%=cours.getLienCoursBD()%></a>
 				<br><br>
+<<<<<<< HEAD
 				<a type="button" class="evaluation btn btn-info btn-flat" href="liste_e.jsp?title=<%= cours.getTitreCours()%>">Evaluations &nbsp;<i class="fa fa-edit"></i></a>      
+=======
+				<a type="button" class="evaluation btn btn-info btn-flat" href="liste_e.jsp?title=<%= cours.getTitreCours()%>">Evaluations <i class="fa fa-edit"></i></a>      
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
               </blockquote>
      	
      	</div>
@@ -84,9 +125,15 @@
                 		                		 
                 	<% }else{%>
                 	<blockquote>
+<<<<<<< HEAD
                 		<div style="olor:red;"> Aucune video d'introduction pour l'instant. </div>
                 	</blockquote>
                 	<%}%>
+=======
+                		<a href="videoIntro.jsp?title=<%=cours.getTitreCours()%>"> Aucune video d'introduction pour l'instant. </a>
+                	</blockquote>
+                	<%} %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
      	
      	</div>
      	
@@ -247,3 +294,7 @@ $('#description').readmore({
 
 </html>
 <%} %>
+<<<<<<< HEAD
+=======
+<%} %>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b

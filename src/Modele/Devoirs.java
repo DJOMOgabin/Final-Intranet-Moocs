@@ -1,5 +1,9 @@
 package Modele;
 
+<<<<<<< HEAD
+=======
+import java.sql.Connection;
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -30,13 +34,27 @@ public class Devoirs {
 	 * @throws SQLException
 	 * @throws ClassNotFoundException
 	 */
+<<<<<<< HEAD
+=======
+	public static Connection ouvrirBD() throws SQLException,ClassNotFoundException
+	{
+		return Examen.ouvrirBD();		
+	}
+	
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	public void charger(boolean bol,boolean enseignant)
 	{
 		try{
 			
+<<<<<<< HEAD
 			Examen.connexion(); 
 			ResultSet result;
 			Statement prep = Examen.getConn().createStatement();
+=======
+			Connection conn = ouvrirBD(); 
+			ResultSet result;
+			Statement prep = conn.createStatement();
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			String query;
 			String status;
 			if(enseignant) status="enseignant";
@@ -71,24 +89,45 @@ public class Devoirs {
 				}
 				result.close();
 			}
+<<<<<<< HEAD
 			prep.close();			
 		}catch(SQLException ex)
 		{
 			System.out.println(ex.getMessage());
+=======
+			prep.close();
+			conn.close();
+			
+		}catch(SQLException ex)
+		{
+			System.out.println(ex.getMessage());
+		}catch(ClassNotFoundException ex)
+		{
+			System.out.println(ex.getMessage());
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		}
 		
 	}
 	
 	public static void decharger(String nomCours,String devoir, String etudiant){
 		try{
+<<<<<<< HEAD
 
 			Examen.connexion();
+=======
+			
+			Connection conn = ouvrirBD(); 
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			ResultSet result;
 			java.sql.PreparedStatement prep;
 			String query,id1="",id2="";
 			
 			query ="select idetudiant id from etudiant where nom=?;";
+<<<<<<< HEAD
 			prep = Examen.getConn().prepareStatement(query);
+=======
+			prep = conn.prepareStatement(query);
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			prep.setString(1, etudiant);
 			result = prep.executeQuery();
 			while(result.next()){
@@ -96,7 +135,11 @@ public class Devoirs {
 			}
 			
 			query ="select idcours id from cours where titrecours=?;";
+<<<<<<< HEAD
 			prep = Examen.getConn().prepareStatement(query);
+=======
+			prep = conn.prepareStatement(query);
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			prep.setString(1, nomCours);
 			result = prep.executeQuery();
 			while(result.next()){
@@ -104,13 +147,18 @@ public class Devoirs {
 			}
 			
 			query = "insert into devoir(idcours,idetudiant,nomDevoir,dateEnvoie) value (?,?,?,?);";
+<<<<<<< HEAD
 			prep = Examen.getConn().prepareStatement(query);
+=======
+			prep = conn.prepareStatement(query);
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			prep.setString(1, id2);
 			prep.setString(2, id1);
 			prep.setString(3, devoir);
 			prep.setString(4, new Timestamp(new Timestamp().getDateTime()).toString());
 			prep.executeUpdate();
 			result.close();
+<<<<<<< HEAD
 			prep.close();			
 		}catch(SQLException ex)
 		{
@@ -122,6 +170,26 @@ public class Devoirs {
 			Examen.connexion(); 
 			ResultSet result;
 			Statement prep= Examen.getConn().createStatement();
+=======
+			prep.close();
+			conn.close();
+			
+		}catch(SQLException ex)
+		{
+			System.out.println(ex.getMessage());
+		}catch(ClassNotFoundException ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		
+	}
+	public static boolean EffacerDevoir(String nomCours,boolean enseignant){
+		try{
+			
+			Connection conn = ouvrirBD(); 
+			ResultSet result;
+			Statement prep= conn.createStatement();
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			String query,id="";
 			
 			query ="select idcours id from cours where titrecours='"+nomCours+"';";
@@ -137,9 +205,20 @@ public class Devoirs {
 			prep.executeUpdate(query);
 			result.close();
 			prep.close();
+<<<<<<< HEAD
 		}catch(SQLException ex)
 		{
 			System.out.println(ex.getMessage());
+=======
+			conn.close();
+			
+		}catch(SQLException ex)
+		{
+			System.out.println(ex.getMessage());
+		}catch(ClassNotFoundException ex)
+		{
+			System.out.println(ex.getMessage());
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		}
 		return true;
 		

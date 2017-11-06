@@ -36,10 +36,16 @@
 
               <p>
                    <%=userMooc.getNom() %> - Etudiant
+<<<<<<< HEAD
                   <small id="heure"></small>
                 </p>
               </li>
               <%@include file="real-time.jsp"%>
+=======
+                  <small><%=userMooc.getHeureActuelle() %></small>
+                </p>
+              </li>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
               <!-- Menu Body -->
               <!-- Menu Footer-->
               <li class="user-footer">
@@ -103,4 +109,11 @@
       <h1>
         <small>Version 2.0</small>
       </h1>
+<<<<<<< HEAD
+=======
+      <!--ol class="breadcrumb">
+        <li><a href="index.jsp#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Tableau de bord</li>
+      </ol-->
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     </section>

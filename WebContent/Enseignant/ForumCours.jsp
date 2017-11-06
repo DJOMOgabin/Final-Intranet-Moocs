@@ -109,7 +109,10 @@
               </div>
     <%@include file="../footer.jsp" %>
     <script type = "text/javascript" src ="../js/script.js"></script>
+<<<<<<< HEAD
     <script><%@include file="chemin.jsp" %></script>
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     <script type = "text/javascript" src ="../js/js.js"></script>
 	
 	<!-- jQuery 2.1.4 -->

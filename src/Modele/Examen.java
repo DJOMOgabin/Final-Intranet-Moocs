@@ -38,6 +38,15 @@ public class Examen {
 		}
 	}
 
+<<<<<<< HEAD
+=======
+	/**
+	 * 
+	 * @return Connection chaine_connection
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	public static Connection ouvrirBD() throws SQLException,ClassNotFoundException
 	{
 		return Connecteur.FaireConn();
@@ -85,6 +94,11 @@ public class Examen {
 			prep.setString(1, id);
 			prep.setString(2,nomExam);
 			prep.executeUpdate();
+<<<<<<< HEAD
+=======
+			
+			
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			prep.close();
 		}
 		catch(SQLException ex)
@@ -93,6 +107,7 @@ public class Examen {
 		}
 	}
 	
+<<<<<<< HEAD
 	public static void Noter(String devoir,String note){
 		try{ 
 			PreparedStatement prep;
@@ -154,6 +169,8 @@ public class Examen {
 		return list;
 	}
 	
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	public static void supprimer(String nomCours,String nomExam){
 		try{
 			
@@ -176,6 +193,7 @@ public class Examen {
 		}
 	}
 	
+<<<<<<< HEAD
 	public static String EtudiantInscrit(String nomCours){
 		try{			
 			connexion();
@@ -196,6 +214,8 @@ public class Examen {
 		}
 	}
 	
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	public static boolean supprimerCours(String nomEnseignant,String nomCours){
 		try{			
 			connexion();
@@ -282,7 +302,11 @@ public class Examen {
 			PreparedStatement prep;
 			String query;
 			ArrayList<String> code = new ArrayList<String>();
+<<<<<<< HEAD
 			query="select nom from enseignant where nom!=? and status!='admin';";
+=======
+			query="select nom from enseignant where nom!=? or status!='admin';";
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			connexion();
 			prep = conn.prepareStatement(query);
 			prep.setString(1, nom);
@@ -368,6 +392,10 @@ public class Examen {
 			query = "INSERT INTO forum(idcours,titresujet) VALUE (?,?);";
 			connexion();
 			prep = conn.prepareStatement(query);
+<<<<<<< HEAD
+=======
+			System.out.println(idcours);
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			prep.setString(1, idcours);
 			prep.setString(2, theme);
 			prep.executeUpdate();
@@ -530,6 +558,7 @@ public class Examen {
 		
 		return string;
 	}
+<<<<<<< HEAD
 
 	public static Connection getConn() {
 		return conn;
@@ -540,5 +569,9 @@ public class Examen {
 	}
 	
 	
+=======
+	
+	public static void main(String[] args){}
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	
 }

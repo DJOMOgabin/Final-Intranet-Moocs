@@ -81,6 +81,7 @@ public class User
 	 */
 	private char autorisation;
 	private int idEtudiant; 
+<<<<<<< HEAD
 	private DevoirsEtudiant devoirEtudiant;
 	public DevoirsEtudiant getDevoirEtudiant() {
 		return devoirEtudiant;
@@ -88,6 +89,15 @@ public class User
 
 	public void setDevoirEtudiant(DevoirsEtudiant devEtudiant) {
 		this.devoirEtudiant = devEtudiant;
+=======
+	private static DevoirsEtudiant devoirEtudiant;
+	public static DevoirsEtudiant getDevoirEtudiant() {
+		return devoirEtudiant;
+	}
+
+	public static void setDevoirEtudiant(DevoirsEtudiant devEtudiant) {
+		devoirEtudiant = devEtudiant;
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	}
 
 

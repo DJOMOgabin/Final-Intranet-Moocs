@@ -93,6 +93,11 @@ public class Cours
 			this.descriptionCours=descriptionCours;
 			this.nombreSemainesCours=nombreSemainesCours;
 			this.listeVideo= new HashMap<Integer,video>();
+<<<<<<< HEAD
+=======
+			this.logoCours=logoCours;
+			
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			for(int i=1;i<=nombreSemainesCours;i++)
 			
 			{
@@ -109,6 +114,10 @@ public Cours(String titreCours, String langueCours, String categorieCours, Strin
 			this.descriptionCours=descriptionCours;
 			this.nombreSemainesCours=nombreSemainesCours;
 			this.listeVideo= new HashMap<Integer,video>();
+<<<<<<< HEAD
+=======
+			this.logoCours=logoCours;
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			this.lien = lien;
 			
 			for(int i=1;i<=nombreSemainesCours;i++)

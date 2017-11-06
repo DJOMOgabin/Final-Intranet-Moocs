@@ -1,4 +1,14 @@
 package Modele;
+<<<<<<< HEAD
+=======
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 import controlleur.Lecture;
 
 public class constante 
@@ -59,7 +69,56 @@ public class constante
 		
 		return host_bd;
 	}
+<<<<<<< HEAD
 	
+=======
+	/*
+	public static String getPathBd()
+	{
+		String user = "";
+		int ligne = 5;
+		
+		try
+		{
+		    File f = new File ("/var/lib/tomcat7/webapps/mooc/config.mooc");
+		    FileReader fr = new FileReader (f);
+		    BufferedReader br = new BufferedReader (fr);
+		 
+		    try
+		    {
+		        String line = br.readLine();
+		        int compteur = 1;
+		 
+		        while (line != null)
+		        {
+		            
+		            String[] userBd = line.split(":");
+		            user = userBd[1].trim();
+		            line = br.readLine();
+		            if(compteur==ligne)
+		            {
+		            	break;
+		            }
+		            
+		            compteur++;
+		        }
+		 
+		        br.close();
+		        fr.close();
+		    }
+		    catch (IOException exception)
+		    {
+		    }
+		}
+		catch (FileNotFoundException exception)
+		{
+		}
+
+
+		return user;
+	}
+	*/
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	public static String getPortBd()
 	{
 		

@@ -25,6 +25,15 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
 
+<<<<<<< HEAD
+=======
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<%@ include file="entete2.jsp" %>
@@ -187,6 +196,10 @@
 
 <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
 
+<<<<<<< HEAD
+=======
+    <script type = "text/javascript" src ="../js/js.js"></script>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 
 <!-- Bootstrap 3.3.5 -->
 <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -212,7 +225,11 @@
 <script src="../dist/js/demo.js"></script>
 
 <script>
+<<<<<<< HEAD
 <%@include file="chemin.jsp" %>
+=======
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 
 function supprime(nom)
 {

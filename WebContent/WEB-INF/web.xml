@@ -3,8 +3,53 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
+<<<<<<< HEAD
 	
 	<!--servlet>
+=======
+	<!--servlet>
+		<servlet-name>Evaluation</servlet-name>
+		<servlet-class>Controleur.Evaluation</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Evaluation</servlet-name>
+		<url-pattern>/Intra/evaluation</url-pattern>
+	</servlet-mapping> 
+	<servlet>
+		<servlet-name>Epreuve</servlet-name>
+		<servlet-class>Controleur.EpreuveFinal</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Epreuve</servlet-name>
+		<url-pattern>/Intra/epreuve</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Forum</servlet-name>
+		<servlet-class>Controleur.Composition</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Forum</servlet-name>
+		<url-pattern>/Intra/forum</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Composition</servlet-name>
+		<servlet-class>Controleur.Composition</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Composition</servlet-name>
+		<url-pattern>/composition</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Evaluation</servlet-name>
+		<servlet-class>Controleur.Evaluation</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Evaluation</servlet-name>
+		<url-pattern>/evaluation</url-pattern>
+	</servlet-mapping-->
+
+	<servlet>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		<servlet-name>Upload</servlet-name>
 		<servlet-class>controlleur.Upload</servlet-class>
 		<init-param>
@@ -20,6 +65,11 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Upload</servlet-name>
+<<<<<<< HEAD
 		<url-pattern>upload/</url-pattern>
 	</servlet-mapping-->
+=======
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 </web-app>

@@ -6,6 +6,30 @@
 document.addEventListener('DOMContentLoaded', function (event) {
 	bool=true;
 });
+<<<<<<< HEAD
+=======
+
+String.prototype.sansAccent = function(){
+    var accent = [
+        /[\300-\306]/g, /[\340-\346]/g, // A, a
+        /[\310-\313]/g, /[\350-\353]/g, // E, e
+        /[\314-\317]/g, /[\354-\357]/g, // I, i
+        /[\322-\330]/g, /[\362-\370]/g, // O, o
+        /[\331-\334]/g, /[\371-\374]/g, // U, u
+        /[\321]/g, /[\361]/g, // N, n
+        /[\307]/g, /[\347]/g, // C, c
+    ];
+    var noaccent = ['A','a','E','e','I','i','O','o','U','u','N','n','C','c'];
+     
+    var str = this;
+    for(var i = 0; i < accent.length; i++){
+        str = str.replace(accent[i], noaccent[i]);
+    }
+     
+    return str;
+}
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 function surligne(champ, erreur){
    if(erreur)
       champ.style.backgroundColor = "#fba";
@@ -49,7 +73,10 @@ function verifNumber2(champ){
 	   }
 	}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 function chiffrer(){
 	var arrays = $('textarea');
 	var exercice = $('.exercice');
@@ -86,7 +113,12 @@ function verifForm(f){
     		i=exer;
     		j=ques;
     		bool=false;
+<<<<<<< HEAD
     	}    	
+=======
+    	}
+    	
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     	i++;
     	j=0;
     	var tr = document.createElement('div');
@@ -94,7 +126,12 @@ function verifForm(f){
     			"<input class='exercice form-control' type='text' name='exercice"+i+"' value='' placeholder=\"Titre de l' exercice\" size='100' maxlength='100'/>" +
     			"<br><br><br><p><textarea rows='7' cols='150' class='enonce  form-control' name='enonce"+i+"'  placeholder=\"Veuillez entrer l'enoncé de votre exercice\"></textarea><p>";
     	document.getElementById('epreuve').appendChild(tr);
+<<<<<<< HEAD
     	question(i,j);    	
+=======
+    	question(i,j);
+    	
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     }
     
     function question(exer,ques){
@@ -134,6 +171,10 @@ function verifForm(f){
 			"</div></div><p>"+
 		"</div>";
     	document.getElementById('div'+i).appendChild(td);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     }
     
     
