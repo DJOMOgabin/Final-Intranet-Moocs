@@ -10,7 +10,6 @@ public class Connecteur {
 
 	private static Connection connexion=null;
 	
-<<<<<<< HEAD
 	//On définit une connexion singleton (constructeur private) pour ne pas devoir créer la connexion à tout moment
 	private Connecteur(){
 		try {
@@ -34,27 +33,6 @@ public class Connecteur {
 				new Connecteur();
 			}
 		}catch (SQLException e){
-=======
-	public static Connection FaireConn(){
-		try {
-			if(getConnexion()==null || getConnexion().isClosed()){
-				try {
-					new constante();
-					System.out.println("je crée une connexion");
-					Class.forName(constante.getDriver());
-					setConnexion(DriverManager.getConnection(constante.getChaine_connexion(),constante.getUserBd(),constante.getPassBd()));
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					System.out.println("erreur de connexion : ");
-					e.printStackTrace();
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}else{
-			}
-		} catch (SQLException e) {
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			try {
 				getConnexion().close();				
 			} catch (SQLException e1) {
