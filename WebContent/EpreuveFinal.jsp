@@ -14,15 +14,11 @@ Modele.Reponse,Traitement.ReponseQuestion" %>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<<<<<<< HEAD
 	<%if(session.getAttribute("enseignant")!=null){%>
   	<title>INTRANET MOOCs| Enseignant</title>
 	<%}else{ %>
   	<title>INTRANET MOOCs</title>
 	<%} %>
-=======
-  <title>INTRANET MOOCs| Enseignant</title>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
@@ -44,7 +40,6 @@ Modele.Reponse,Traitement.ReponseQuestion" %>
 
 <body class="hold-transition skin-blue sidebar-mini">
 <%@ page contentType="text/html; charset=UTF-8" %>
-<<<<<<< HEAD
 	<%if(session.getAttribute("enseignant")!=null){%>
 		<%if(request.getParameter("status").equals("en")){%>	
 	    <%@include file="Enseignant/enteteF.jsp" %>
@@ -53,12 +48,6 @@ Modele.Reponse,Traitement.ReponseQuestion" %>
 		<%} %>
 	<%}else{ %>
 	<%@ include file="entete_e.jsp" %>
-=======
-	<%if(session.getAttribute("enseignant")==null){%>	
-    <%@include file="entete_e.jsp" %>
-	<%}else{ %>
-	<%@ include file="../Enseignant/entete.jsp" %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	<%} %>
 	<section class="content-header">
 		<%
@@ -74,11 +63,7 @@ Modele.Reponse,Traitement.ReponseQuestion" %>
 		for(int i=0;i<epreuve.getExercice().size();i++)
 			for(int j=0;j<epreuve.getExercice().get(i).getQuestion().size();j++)
 				max+=epreuve.getPoint().getJuste();
-<<<<<<< HEAD
 		if(session.getAttribute("enseignant")==null){
-=======
-		if(request.getParameter("status").equals("etu")){
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				copie=new CopieEtudiant();
 				copie.setIdEtudiant(""+userMooc.getId());
 				copie.setNombreTentative(-1);
@@ -124,11 +109,7 @@ Modele.Reponse,Traitement.ReponseQuestion" %>
 				<div class="col-md-9">
 					<label class="indicative"><small><i><u >Indication:</u> </i> <strong> <%= epreuve.getIndicative() %> </strong></small></label><br><p>
 				</div>				
-<<<<<<< HEAD
 				<%if(session.getAttribute("enseignant")==null){ %>
-=======
-				<%if(request.getParameter("status").equals("etu")){ %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 					<div class="col-md-3" style="font-size: x-large">			
 				 		<input name="temps" id="temps" type="hidden" value="" >
 				 		<%if(copie.getNote()>copie.getMax()/2){ %>
@@ -156,7 +137,6 @@ Modele.Reponse,Traitement.ReponseQuestion" %>
 					<% for(int j=0;j<epreuve.getExercice().get(i).getQuestion().size();j++){%>
 						<div class="blocProposition" >
 							<label class="question"><b><%=j+1 %>) </b><%=epreuve.getExercice().get(i).getQuestion().get(j).getQuestion() %></label><p>
-<<<<<<< HEAD
 							<div class="row">
 								<div class="col-md-1" >
 									<input class="proposition pull-right" name="proposition<%=i %><%=j %>" type="radio" value="1"/>								
@@ -189,26 +169,13 @@ Modele.Reponse,Traitement.ReponseQuestion" %>
 									<label>D )&nbsp; &nbsp; &nbsp;   <%=epreuve.getExercice().get(i).getQuestion().get(j).getProposition().getPropo4()%></label><br>
 								</div>
 							</div><br><p>
-=======
-							<input class="proposition" name="proposition<%=i %><%=j %>" type="radio" value="1"/>
-							<label>A ) <%=epreuve.getExercice().get(i).getQuestion().get(j).getProposition().getPropo1() %></label><br>
-							<input class="proposition" name="proposition<%=i %><%=j %>" type="radio" value="2"/>
-							<label>B ) <%=epreuve.getExercice().get(i).getQuestion().get(j).getProposition().getPropo2() %></label><br>
-							<input class="proposition" name="proposition<%=i %><%=j %>" type="radio" value="3"/>
-							<label>C ) <%=epreuve.getExercice().get(i).getQuestion().get(j).getProposition().getPropo3() %></label><br>
-							<input class="proposition" name="proposition<%=i %><%=j %>" type="radio" value="4"/>
-							<label>D ) <%=epreuve.getExercice().get(i).getQuestion().get(j).getProposition().getPropo4() %></label><br><p>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 						</div>
 					<%}%>
 				<%}%>
 			</fieldset>
 		<br><br>
 		<br><br>
-<<<<<<< HEAD
 	<%if(session.getAttribute("enseignant")!=null){%>
-=======
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		<%if(request.getParameter("status").equals("en")){%>
 			<div class="row">
 					<div class="col-md-4">
@@ -219,7 +186,6 @@ Modele.Reponse,Traitement.ReponseQuestion" %>
 				    <div class="col-md-4"></div>	
 			</div>
 		<%}else{%>
-<<<<<<< HEAD
 			<div class="row">
 					<div class="col-md-4">
 						<a type="submit" href="liste_e.jsp?title=${title }"class="btn btn-lg retour btn-danger login-button">
@@ -230,8 +196,6 @@ Modele.Reponse,Traitement.ReponseQuestion" %>
 			</div>
 		<%}%>
 	<%}else{%>
-=======
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				<input type="hidden" name="juste" value="${juste }"/>
 				<input type="hidden" name="mauvais" value="${mauvais }"/>
 				<input type="hidden" name="aucun" value="${aucun}"/>
@@ -292,19 +256,6 @@ $("#newlink").submit(function(e){
 	$("#go").hide();
 	$("#none").show();
 });
-<<<<<<< HEAD
-=======
-	/*function decodage(){
-		var arrays = $('label');
-		
-		//On déchiffre tous les champs pour éviter les problèmes d'encodage avant d'envoyer dans la base de données
-		arrays.each(function(){
-			$(this).text(unescape($(this).text()));
-		});
-	}
-	window.onload = decodage();*/
-
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     <%@include file="decodage.jsp" %>
 </script> 
 </body>

@@ -44,21 +44,13 @@
         User etudiant=new User();
         etudiant.setNom(etudiant.getNomId(id_etudiant));
         String NomEtudiant=etudiant.getNomId(id_etudiant)+""+etudiant.getPrenomId(id_etudiant);%>
-<<<<<<< HEAD
      		<div class="col-md-5">
-=======
-     		<div class="col-md-4">
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
      			<div class="box box-primary">
             		<div class="box-body box-profile">
             			<!-- <img class="profile-user-img img-responsive img-circle" src="../dist/img/user.png" class="img-circle" alt="User Image"> -->
             			<h3 class="profile-username text-center"><%=etudiant.getNom()%></h3>
 						<ul class="list-group list-group-unbordered">
-<<<<<<< HEAD
 							<li class="list-group-item">
-=======
-						<li class="list-group-item">
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			                  <b>Cours</b> <a class="pull-right"><%=request.getParameter("title") %></a>
 			                </li>
 			                <li class="list-group-item">
@@ -79,11 +71,7 @@
             	</div>
      		</div>
      		
-<<<<<<< HEAD
      		<div class="col-md-7">
-=======
-     		<div class="col-md-8">
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
      			<div class="nav-tabs-custom">
 		            <ul class="nav nav-tabs">
 		              <li class="active"><a href="#courses" data-toggle="tab">Etudiants</a></li>
@@ -99,16 +87,7 @@
 						
 							<th> <center>#</center> </th>
 							<th> <center>Nom de l'Etudiant</center> </th>
-<<<<<<< HEAD
 							<th> <center>Note</center> </th>
-=======
-							<%if(liste==null || liste.size()==0){%>
-								<th> <center>Note</center> </th>
-							<%}else{ %>							
-								<th> <center>Note / <%=liste.get(0).getMax()%></</center> </th>
-							<%} %>
-					
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 					</tr>
 				
 				</thead>
@@ -118,7 +97,6 @@
 						<tr class=""success":"info"%>
 							<td><center><%=i+1%></center></td>
 							<% CopieEtudiant copie = (CopieEtudiant) liste.get(i);%>
-<<<<<<< HEAD
 							<td><center><%=userMooc.getNomId(copie.getIdEtudiant()) %></center></td>							
 							<td><center><%=copie.getNote() %> / <%=copie.getMax()%></center></td>
 						</tr>
@@ -129,43 +107,11 @@
 		            	<div class="tab-pane" id="bord">
 		            	</div>
 		            	<div class="tab-pane" id="perso">
-=======
-							<td><center><%=userMooc.getNomId(copie.getIdEtudiant()) %></center></td> 
-							
-							<td><center><%=copie.getNote() %> / <%=copie.getMax()%></center></td>
-				
-							
-						</tr>
-						<%} %>
-				
-				
-				</tbody>
-			
-			
-			</table>
-        	
-		            	</div>
-		            	<div class="tab-pane" id="bord">
-		            		
-		            	</div>
-		            	<div class="tab-pane" id="perso">
-		  
-        		
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		            	</div>
 		            </div>
             	</div>
      		</div>
-<<<<<<< HEAD
      	</div>
-=======
-     		
-     		
-     	
-     	</div>
-     
-     
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     <%@include file="../footer.jsp" %>
     
 

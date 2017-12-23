@@ -22,10 +22,6 @@
 				{
 					//Process input type=text|radio|checkbox entries
 					if(item.getFieldName().equals("titreCours")){
-<<<<<<< HEAD
-=======
-						System.out.println(item.getString());
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 						courMoocs.setTitreCours(new OutilsChaine().convertirEnHTML(item.getString()));	
 					}
 					if(item.getFieldName().equals("langueCours")){
@@ -68,12 +64,7 @@
 						connecteurForum.fermerConnexion();
 						
 					}else{
-<<<<<<< HEAD
 						if(item.getContentType().equals("image/png")){
-=======
-					if(item.getContentType().equals("image/png"))
-					{
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 					
 					File uploadDir = new File(getServletContext().getRealPath("/")+"cours/img/");
 					File savedFile = File.createTempFile("img", ".png", uploadDir);
@@ -127,10 +118,6 @@
 						courMoocs.enregistreBD();
 						
 						Statement  stat= connecteurForum.getConnexion().createStatement();
-<<<<<<< HEAD
-=======
-						System.out.println("--------------\n"+teacher.getName());
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 						stat.executeUpdate("insert into prof_cours values ("+teacher.getId()+","+courMoocs.getId()+")");
 						stat.close();
 						connecteurForum.fermerConnexion();

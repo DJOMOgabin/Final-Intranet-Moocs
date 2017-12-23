@@ -47,11 +47,7 @@
         <!-- /.col -->
         <div class="col-md-6 col-sm-6 col-xs-6">
           <div class="info-box">
-<<<<<<< HEAD
             <span class="info-box-icon bg-green"><i class="fa fa-book"></i></span>
-=======
-            <span class="info-box-icon bg-green"><i class="fa fa-users"></i></span>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 
             <div class="info-box-content">
               <span class="info-box-text">COURS DE L'ENSEIGNANT(E) </span>
@@ -97,11 +93,7 @@
             	<div class="col-xs-12">
             	<div class="box box-info">
             	<div class="box-header">
-<<<<<<< HEAD
             		<h3 class="box-title"><b>LISTE DES COURS DE L'ENSEIGNANT(E) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div class="pull-right" style="color:red;"> <%=request.getParameter("nom").toUpperCase()%></div></b></h3>
-=======
-            		<h3 class="box-title"><b>LISTE DES COURS DE L'ENSEIGNANT %%%%%%%%%%% <div class="pull-right" style="color:red;"> <%=request.getParameter("nom").toUpperCase()%></div></b></h3>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
             	</div>
             	<div class="box-body">
             		<table id="courses" class="table table-bordered table-hover">	
@@ -113,14 +105,9 @@
             				<tr>
             					<th> <center># </center></th>
             					<th> <center>COURS </center></th>
-<<<<<<< HEAD
             					<th> <center>INSCRITS </center></th>
             					            					
             					<th> <center> VOIR COURS</center></th>
-=======
-            					            					
-            					<!--th> <center> VOIR COURS</center></th-->
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
             					<th> <center>FERMER / OUVRIR </center></th>
             					<th> <center> SUPPRIMER COURS</center></th>
             					
@@ -131,7 +118,6 @@
             		<%for(int i = 0; i<list.size(); i++){ %>
             				<tr data-nomcours="<%=list.get(i).getNom()%>">
             					<td> <center><%=(i+1)%></center></td>
-<<<<<<< HEAD
             					<td> <center><%=list.get(i).getNom().toUpperCase() %></center></td>            					
             					<td> <center><%=Examen.EtudiantInscrit(list.get(i).getNom())%></center></td>
             					
@@ -140,15 +126,6 @@
             					<td> <center><a type="button" href="#" class="fermer btn btn-block btn-warning btn-flat">BLOQUER LE COURS <i class="fa fa-ban"></i></a></center></td>
             					<%}else{ %>
             					<td> <center><a type="button" href="#" class="ouvrir btn btn-block btn-success btn-flat">DEBLOQUER LE COURS <i class="fa fa-check-circle"></i></a></center></td>
-=======
-            					<td> <center><%=list.get(i).getNom().toUpperCase() %></center></td>
-            					
-            					<!--td> <center><a type="button" href="#" class="btn btn-block btn-info btn-flat">Aperçu ... <i class="fa fa-cogs"></i></a></center></td-->
-            					<%if(list.get(i).getValeur().equalsIgnoreCase("1")){%>
-            					<td> <center><a type="button" href="#" class="fermer btn btn-block btn-warning btn-flat">FERMER LE COURS <i class="fa fa-ban"></i></a></center></td>
-            					<%}else{ %>
-            					<td> <center><a type="button" href="#" class="ouvrir btn btn-block btn-success btn-flat">OUVRIR LE COURS <i class="fa fa-check-circle"></i></a></center></td>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
             					<%}%>
             					<td> <center><a type="button" href="#" data-toggle="modal" data-target="#myModal3" class="supp btn btn-block btn-danger btn-flat">SUPPRIMER <i class="fa fa-times"></i></a></center></td>
             				</tr>
@@ -166,10 +143,6 @@
     
 
 <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
-<<<<<<< HEAD
-=======
-    <script type = "text/javascript" src ="../js/js.js"></script>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 
 <!-- Bootstrap 3.3.5 -->
 <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -195,10 +168,7 @@
 <script src="../dist/js/demo.js"></script>
 
 <script>
-<<<<<<< HEAD
 <%@include file="chemin.jsp" %>
-=======
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 
 	$('#apropos').click(function(){
 

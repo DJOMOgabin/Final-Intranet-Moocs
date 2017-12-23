@@ -26,11 +26,7 @@
 	  	Intranet MOOC est une plateforme de MOOCs locale. Elle permet aux enseignants de poster des cours
 	  	audios et vid&eacuteos, cr&eacuteer des &eacutevaluations.<br> 
 	  </article>
-<<<<<<< HEAD
 	  <br>
-=======
-	  </br>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	  <p style="font-size: 20px;">Cette plateforme a &eacutet&eacute d&eacutevelopp&eacutee dans le cadre d'un projet acad&eacutemique.<br><br> encadrer par: </p><br>
 	  
 	  <!-- Left-aligned media object -->
@@ -44,11 +40,7 @@
 	      <p>Professeur à ENSPY, D&eacutepartement G&eacutenie Informatique</p>
 	    </div>
 	  </div>
-<<<<<<< HEAD
 	  <br>
-=======
-	  </br>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	  <%}else{%>
 		<div class="media">
 	    <div class="media-left">
@@ -59,22 +51,13 @@
 	      <p>Professeur à ENSPY, D&eacutepartement G&eacutenie Informatique</p>
 	    </div>
 	  </div>
-<<<<<<< HEAD
 	  <br>
-=======
-	  </br>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	  <%}%>
 	  <p style="font-size: 20px;">D&eacutevelopp&eacute par: </p><br>
 	  
 	  <a href="#" data-toggle="modal" data-target="#myModal1">Promotion 2017</a>
-<<<<<<< HEAD
 	  <br>
 	  <br>
-=======
-	  </br>
-	  </br>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	  <a href="#" data-toggle="modal" data-target="#myModal2">Promotion 2018</a>
 	 </div>
 	</div>
@@ -97,7 +80,6 @@
 			</div>
 			<div class="modal-body">
 	  <p style="font-size: 20px; text-align:center; color:blue;"><b><u>Promotion 2017</u></b></p><br>
-<<<<<<< HEAD
 			<%if(session.getAttribute("enseignant")!=null){%>
 				  <div class="media">
 				    <div class="media-left">
@@ -112,29 +94,12 @@
 				  <div class="media">
 				    <div class="media-left">
 				    	<a href="../images/joseph.jpg" target="_blank"><img src="../images/joseph.jpg" class="media-object les_images" style="width:60px"></a>
-=======
-			<%if(session.getAttribute("user")!=null){%>
-				  <div class="media">
-				    <div class="media-left">
-				    	<a href="images/djobi.jpg" target="_blank"><img src="images/djobi.jpg" class="media-object les_images" style="width:60px"></a>
-				    </div>
-				    <div class="media-body">
-				      <h4 class="media-heading">MVONDO DJOBI Thystère</h4>
-				      <p>Matricule xxxxxxxxx</p>
-				    </div>
-				  </div>
-				  </br>
-				  <div class="media">
-				    <div class="media-left">
-				    	<a href="images/joseph.jpg" target="_blank"><img src="images/joseph.jpg" class="media-object les_images" style="width:60px"></a>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				    </div>
 				    <div class="media-body">
 				      <h4 class="media-heading">DOMGUIA Joseph Marie</h4>
 				      <p>Matricule 12P274</p>
 				    </div>
 				  </div>
-<<<<<<< HEAD
 				  <br>
 				  <div class="media">
 				    <div class="media-left">
@@ -146,9 +111,6 @@
 				    </div>
 				  </div>
 				  <br>
-=======
-				  </br>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			<%}else{%>				
 				<div class="media">
 				  <div class="media">
@@ -156,21 +118,12 @@
 				    	<a href="images/djobi.jpg" target="_blank"><img src="images/djobi.jpg" class="media-object les_images" style="width:60px"></a>
 				    </div>
 				    <div class="media-body">
-<<<<<<< HEAD
 				      <h4 class="media-heading">MVONDO DJOB BARBE Thystère</h4>
 				      <p>Matricule 11P252</p>
 				    </div>
 				  </div>
 				</div>
 				<br>
-=======
-				      <h4 class="media-heading">MVONDO DJOBI Thystère</h4>
-				      <p>Matricule xxxxxxxxx</p>
-				    </div>
-				  </div>
-				</div>
-				</br>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				<div class="media">
 				    <div class="media-left">
 				    	<a href="images/joseph.jpg" target="_blank"><img src="images/joseph.jpg" class="media-object les_images" style="width:60px"></a>
@@ -180,7 +133,6 @@
 				      <p>Matricule 12P274</p>
 				    </div>
 				  </div>
-<<<<<<< HEAD
 				  <br>
 				<div class="media">
 				    <div class="media-left">
@@ -192,9 +144,6 @@
 				    </div>
 				  </div>
 				  <br>
-=======
-				  </br>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			<%}%>
 			<br>
  			</div>
@@ -217,148 +166,87 @@
 			</div>
 			<div class="modal-body">
 	  <p style="font-size: 20px; text-align:center; color:blue;"><b><u>Promotion 2018</u></b></p><br>
-<<<<<<< HEAD
 				  <%if(session.getAttribute("enseignant")!=null){%>
 				  <div class="media">
 				    <div class="media-left">
 				    	<a href="../images/Ange.jpg" target="_blank"><img src="../images/Ange.jpg" class="media-object les_images" style="width:60px"></a>
-=======
-				  <%if(session.getAttribute("user")!=null){%>
-				  <div class="media">
-				    <div class="media-left">
-				    	<a href="images/Ange.jpg" target="_blank"><img src="images/Ange.jpg" class="media-object les_images" style="width:60px"></a>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				    </div>
 				    <div class="media-body">
 				      <h4 class="media-heading">MEKOULOU ENOCH Ange</h4>
 				      <p>Matricule 12P191</p>
 				    </div>
 				  </div>
-<<<<<<< HEAD
 				  <br>
 				  <div class="media">
 				    <div class="media-left">
 				      <a href="../images/Gabin.jpg" target="_blank"><img src="../images/Gabin.jpg" class="media-object les_images" style="width:60px"></a>
-=======
-				  </br>
-				  <div class="media">
-				    <div class="media-left">
-				      <a href="images/Gabin.jpg" target="_blank"><img src="images/Gabin.jpg" class="media-object les_images" style="width:60px"></a>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				    </div>
 				    <div class="media-body">
 				      <h4 class="media-heading">NKUIGWA DJOMO Gabin</h4>
 				      <p>Matricule 13P053</p>
 				    </div>
 				  </div>
-<<<<<<< HEAD
 				  <br>
 				  <div class="media">
 				    <div class="media-left">
 				    	<a href="../images/Um.jpg" target="_blank"><img src="../images/Um.jpg" class="media-object les_images" style="width:60px"></a>
-=======
-				  </br>
-				  <div class="media">
-				    <div class="media-left">
-				    	<a href="images/Um.jpg" target="_blank"><img src="images/Um.jpg" class="media-object les_images" style="width:60px"></a>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				    </div>
 				    <div class="media-body">
 				      <h4 class="media-heading">UM-GWET Ruben</h4>
 				      <p>Matricule 15P210</p>
 				    </div>
 				  </div>
-<<<<<<< HEAD
 				  <br>
 				  <div class="media">
 				    <div class="media-left">
 				    	<a href="../images/Essi.jpg" target="_blank"><img src="../images/Essi.jpg" class="media-object les_images" style="width:60px"></a>
-=======
-				  </br>
-				  <div class="media">
-				    <div class="media-left">
-				    	<a href="images/Essi.jpg" target="_blank"><img src="images/Essi.jpg" class="media-object les_images" style="width:60px"></a>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				    </div>
 				    <div class="media-body">
 				      <h4 class="media-heading">AMEGAYIBOR Essi Linda</h4>
 				      <p>Matricule 16P333</p>
 				    </div>
 				  </div>
-<<<<<<< HEAD
 				  <%}else{%>				
 				<div class="media">
 				    <div class="media-left">
 				    	<a href="images/Ange.jpg" target="_blank"><img src="images/Ange.jpg" class="media-object les_images" style="width:60px"></a>
-=======
-				  <%}else{%>
-				
-				<div class="media">
-				    <div class="media-left">
-				    	<a href="../images/Ange.jpg" target="_blank"><img src="../images/Ange.jpg" class="media-object les_images" style="width:60px"></a>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				    </div>
 				    <div class="media-body">
 				      <h4 class="media-heading">MEKOULOU ENOCH Ange</h4>
 				      <p>Matricule 12P191</p>
 				    </div>
 				  </div>
-<<<<<<< HEAD
 				  <br>
 				  <div class="media">
 				    <div class="media-left">
 				      <a href="images/Gabin.jpg" target="_blank"><img src="images/Gabin.jpg" class="media-object les_images" style="width:60px"></a>
-=======
-				  </br>
-				  <div class="media">
-				    <div class="media-left">
-				      <a href="../images/Gabin.jpg" target="_blank"><img src="../images/Gabin.jpg" class="media-object les_images" style="width:60px"></a>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				    </div>
 				    <div class="media-body">
 				      <h4 class="media-heading">NKUIGWA DJOMO Gabin</h4>
 				      <p>Matricule 13P053</p>
 				    </div>
 				  </div>
-<<<<<<< HEAD
 				  <br>
 				  <div class="media">
 				    <div class="media-left">
 				    	<a href="images/Um.jpg" target="_blank"><img src="images/Um.jpg" class="media-object les_images" style="width:60px"></a>
-=======
-				  </br>
-				  <div class="media">
-				    <div class="media-left">
-				    	<a href="../images/Um.jpg" target="_blank"><img src="../images/Um.jpg" class="media-object les_images" style="width:60px"></a>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				    </div>
 				    <div class="media-body">
 				      <h4 class="media-heading">UM-GWET Ruben</h4>
 				      <p>Matricule 15P210</p>
 				    </div>
 				  </div>
-<<<<<<< HEAD
 				  <br>
 				  <div class="media">
 				    <div class="media-left">
 				    	<a href="images/Essi.jpg" target="_blank"><img src="images/Essi.jpg" class="media-object les_images" style="width:60px"></a>
-=======
-				  </br>
-				  <div class="media">
-				    <div class="media-left">
-				    	<a href="../images/Essi.jpg" target="_blank"><img src="../images/Essi.jpg" class="media-object les_images" style="width:60px"></a>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				    </div>
 				    <div class="media-body">
 				      <h4 class="media-heading">AMEGAYIBOR Essi Linda</h4>
 				      <p>Matricule 16P333</p>
 				    </div>
 				  </div>
-<<<<<<< HEAD
 				<br>
-=======
-				</br>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			<%}%>
 			<br>
  			</div>

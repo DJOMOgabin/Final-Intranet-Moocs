@@ -4,12 +4,8 @@
 <%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante" %>
 <%@ page import="controlleur.chronoThread" errorPage="erreur.jsp"%>
 <%@ include file="WEB-INF/jspf/bean/chronometre.jspf"%>
-<<<<<<< HEAD
 <%@ page import = "java.sql.Connection, java.sql.ResultSet, java.sql.Statement,Modele.Examen,
  java.util.ArrayList, Modele.Cours, Modele.constante, Modele.User" %>
-=======
-<%@ page import = "java.sql.Connection, java.sql.ResultSet, java.sql.Statement, java.util.ArrayList, Modele.Cours, Modele.constante, Modele.User" %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,16 +29,6 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-<<<<<<< HEAD
-=======
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<%@include file="entete2_e.jsp" %>
@@ -141,13 +127,7 @@
 				<tbody>
 				
 					<%
-<<<<<<< HEAD
 						Statement stat = Examen.getConn().createStatement();
-=======
-					
-						Connection conn =  connecteurForum.getConnexion(); 
-						Statement stat = conn.createStatement();
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 						ResultSet rs = stat.executeQuery("select dateDebut,dateFin from session where idEtudiant ="+id_etudiant+" order by dateDebut desc");
 						int i = 0;
 					%>
@@ -164,22 +144,9 @@
 						<%
 							rs.close();
 							stat.close();
-<<<<<<< HEAD
 						 %>
 				</tbody>
 			</table>
-=======
-							conn.close();
-						 %>
-						
-				
-				
-				</tbody>
-			
-			
-			</table>
-		            		
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		            	</div>
 		            	<div class="tab-pane" id="perso">
 		            	<table class="table table-bordered table-condensed table-striped table-hover" id="table1">

@@ -88,7 +88,6 @@ Hibernate.HibernateChargementCopie,Modele.CopieEtudiant,Hibernate.HibernateCopie
 					<div class="col-md-3" style="font-size: x-large">			
 				 		<input name="temps" id="temps" type="hidden" value="" >
 				 		<%if(copie.getNote()>copie.getMax()/2){ %>
-<<<<<<< HEAD
 							<span class="note row" style="color: green">
 						<%}else{ %>							
 							<span class="note row" style="color: red">
@@ -97,16 +96,6 @@ Hibernate.HibernateChargementCopie,Modele.CopieEtudiant,Hibernate.HibernateCopie
 							</span><br>
 						<div class="note row">Temps: <span id="date_heure" style=""></span></div><br>
 						<span class="note row" style="">Tentative: <%=copie.getNombreTentative() %> sur <%=copie.getTotalTentative() %></span>
-=======
-							<span class="note" style="color: green">
-						<%}else{ %>							
-							<span class="note" style="color: red">
-						<%} %>
-								Note: <%=copie.getNote() %>/<%=max %>
-							</span><br>
-						<div class="note">Temps: <span id="date_heure" style=""></span></div><br>
-						<span class="note" style="">Tentative: <%=copie.getNombreTentative() %> sur <%=copie.getTotalTentative() %></span>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			            <script type="text/javascript">
 							window.onload = date_heure('date_heure','<%=copie.reste()%>',
 									'<%=epreuve.getMatiere()%>');

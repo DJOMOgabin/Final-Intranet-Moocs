@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <%if(session.getAttribute("user")==null && session.getAttribute("enseignant")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
-=======
-<%if(session.getAttribute("user")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <%@page import="Modele.Examen"%>
 <%@ include file = "../WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file= "/WEB-INF/jspf/bean/courMoocs.jspf" %>
@@ -39,26 +35,12 @@
 
 <body class="hold-transition skin-blue sidebar-mini">
 <%@ page contentType="text/html; charset=UTF-8" %>
-<<<<<<< HEAD
     <%if(session.getAttribute("enseignant")!=null){%>
 		<%@ include file="enteteAperçu.jsp" %>
 	<%}else{ %>
 		<%@ include file="entete_e.jsp" %>
 	<%} %>
 	<section class="content">
-=======
-	<%@include file="entete_e.jsp" %>
-	<section class="content">
-		<!--div class="row">
-			<div class="col-md-12">
-				<div class="alert alert-dismissible">
-	    			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	                <h3 style="text-align:center"><i class="icon fa fa-info-circle"></i>Les conversations sur  
-	                <b style="color:green"> <%=request.getParameter("theme")%></b></h3>
-	         	</div>
-			</div>
-		</div-->
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		<%ArrayList<Forum> conversation = LectEcriForum.Lecture(request.getParameter("title"),request.getParameter("theme"));%>
 		<script type="text/javascript">
 				var iduser = escape(<%=userMooc.getId()%>);
@@ -119,32 +101,20 @@
 	                  <%} %>
      				<%} %>                    
                   </div>
-<<<<<<< HEAD
                 </div>                
    			 <%if(session.getAttribute("enseignant")==null){%>
-=======
-                </div>
-                
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
                 <div class="row box-footer input-group" style="display:block;">
 			  		<div class="col-md-10">
 			     		<textarea rows="1" cols="100" id="text" class="form-control" placeholder="Type message ..." onkeypress="compte()"></textarea>
 			     	</div>
 			     	<div class="col-md-1 btn btn-lg retour btn-success login-button envoi">
 			     	Send <i class="glyphicon glyphicon-send"></i></div>     	
-<<<<<<< HEAD
 			    </div>			 
    			<%}%>
               </div>
     <%@include file="../footer.jsp" %>
     <script type = "text/javascript" src ="js/script.js"></script>
     <script><%@include file="Enseignant/chemin.jsp" %></script>
-=======
-			    </div>
-              </div>
-    <%@include file="../footer.jsp" %>
-    <script type = "text/javascript" src ="js/script.js"></script>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     <script type = "text/javascript" src ="js/js.js"></script>
 	
 	<!-- jQuery 2.1.4 -->

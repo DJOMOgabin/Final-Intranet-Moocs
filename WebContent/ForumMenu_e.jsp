@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 <%if(session.getAttribute("user")==null && session.getAttribute("enseignant")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
 <%@page import="Modele.Examen"%>
 <%@page import="controlleur.Lecture"%>
-=======
-<%@page import="controlleur.Lecture"%>
-<%if(session.getAttribute("user")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
-<%@page import="Modele.Examen"%>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <%@ include file = "../WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file= "/WEB-INF/jspf/bean/courMoocs.jspf" %>
 <%@ include file = "/WEB-INF/jspf/bean/utilisateurMooc.jspf"%>
@@ -43,15 +37,11 @@ Modele.Devoirs,java.sql.SQLException,Traitement.PaireString,java.sql.ResultSet,c
 
 <body class="hold-transition skin-blue sidebar-mini">
 <%@ page contentType="text/html; charset=UTF-8" %>
-<<<<<<< HEAD
     <%if(session.getAttribute("enseignant")!=null){%>
 		<%@ include file="enteteAperçu.jsp" %>
 	<%}else{ %>
 		<%@ include file="entete_e.jsp" %>
 	<%} %>
-=======
-	<%@include file="entete_e.jsp" %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	<section class="content">
 		<div onload="init()"></div>
 		<div class="row">
@@ -81,29 +71,12 @@ Modele.Devoirs,java.sql.SQLException,Traitement.PaireString,java.sql.ResultSet,c
 				e.printStackTrace();
 			}
 			new Lecture();
-<<<<<<< HEAD
 			for (int i=0;i<forum.size();i++){%>
-=======
-			
-			%>				
-			<script type="text/javascript">
-				host = <%=Lecture.getUrl()%>;
-				alert(host);
-			</script>		
-			<%for (int i=0;i<forum.size();i++){%>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 			<script type="text/javascript">
 				var idCours = <%=id%>;
 				var nomCours = escape("<%=request.getParameter("title")%>");
 			</script>			
 			<div class="row" data-nomforum="<%=forum.get(i)%>">
-<<<<<<< HEAD
-=======
-				<!--div class="col-xs-2 btn">
-					<div type="button" class="supprimer btn alert alert-dismissible alert-warning" >
-					<i class="fa fa-trash"></i> supprimer </div>  
-				</div-->
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 				<div class="btn col-xs-12">
 					<div class="accept">
 						<div class="col-xs-12">
@@ -122,10 +95,7 @@ Modele.Devoirs,java.sql.SQLException,Traitement.PaireString,java.sql.ResultSet,c
 			</div>
      <%}%>
      <br><br><br><br><br>
-<<<<<<< HEAD
     <%if(session.getAttribute("enseignant")==null){%>
-=======
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		<div class="row">
 				<div class="col-xs-12">
 					<div> 
@@ -142,17 +112,10 @@ Modele.Devoirs,java.sql.SQLException,Traitement.PaireString,java.sql.ResultSet,c
 						</div>    
 		         	</div>
 				</div>
-<<<<<<< HEAD
 			</div>	
     <%}%>
     <%@include file="../footer.jsp" %>
     <script type = "text/javascript" src ="js/script.js"></script>
-=======
-			</div>
-    <%@include file="../footer.jsp" %>
-    <script type = "text/javascript" src ="js/script.js"></script>
-    <script type = "text/javascript" src ="js/js.js"></script>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	
 	<!-- jQuery 2.1.4 -->
 <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -186,14 +149,9 @@ Modele.Devoirs,java.sql.SQLException,Traitement.PaireString,java.sql.ResultSet,c
 <script src="dist/js/readmore.js"></script>
 <script type="text/javascript" src="MathJax/MathJax.js?config=AM_HTMLorMML-full"></script>
 <script src="bootstrap/js/script.js" type="text/javascript"></script>
-<<<<<<< HEAD
 <script type="text/javascript" src="js/MathJax.js?config=AM_HTMLorMML-full"></script>
 <script>
 <%@include file="Enseignant/chemin.jsp" %>
-=======
-<script type="text/javascript" src="MathJax/MathJax.js?config=AM_HTMLorMML-full"></script>
-<script>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 $('#none').hide(); 
 $("#newlink").submit(function(e){
 	$("#soumettre").attr("disable",true);

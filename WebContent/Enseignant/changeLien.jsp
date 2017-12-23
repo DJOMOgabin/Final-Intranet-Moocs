@@ -1,11 +1,7 @@
 <%if(session.getAttribute("enseignant")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
 <%@ include file = "../WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file= "/WEB-INF/jspf/bean/courMoocs.jspf" %>
-<<<<<<< HEAD
-<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante,Modele.Devoirs" %>
-=======
 <%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante" %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,9 +36,6 @@
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
-<<<<<<< HEAD
-	<%@ include file="entete.jsp" %>
-=======
 	<div class="wrapper">
 		<header class="main-header">
 
@@ -161,7 +154,6 @@
 
   </aside>
   		    
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
   		    <%Cours c = new Cours(); %>
 			<%if(request.getParameter("title")==null){ %>
 			<%c.setTitreCours(courMoocs.getTitreCours()); %>
@@ -169,8 +161,6 @@
 			<%courMoocs.setTitreCours(request.getParameter("title")); %>
 			<%c = new Cours(); c.setTitreCours(new String(request.getParameter("title").getBytes("ISO-8859-1"),"UTF-8")); %>
 			<%}%>
-<<<<<<< HEAD
-=======
   <div class="content-wrapper">
    <section class="content-header">
       <h1>
@@ -182,7 +172,6 @@
         <li class="active">Tableau de bord</li>
       </ol>
     </section>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	<section class="content">
 		<div class="row">
 		<div class="col-xs-12">

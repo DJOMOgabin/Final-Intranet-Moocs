@@ -36,15 +36,11 @@
     <a href="../../index2.html"><b>INTRANET</b> MOOCs</a>
   </div>	
   
-<<<<<<< HEAD
   <%
   if(session.getAttribute("user")!=null||session.getAttribute("enseignant")!=null) {
 	  session.invalidate();
   }
   if(request.getParameter("error")!=null && request.getParameter("error").length()!=0){ %>
-=======
-  <%if(request.getParameter("error")!=null && request.getParameter("error").length()!=0){ %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
   
   	  <div class="alert alert-danger alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

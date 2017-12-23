@@ -1,11 +1,7 @@
 <%if(session.getAttribute("enseignant")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
 <%@ include file = "../WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file= "/WEB-INF/jspf/bean/courMoocs.jspf" %>
-<<<<<<< HEAD
 <%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante,Modele.Devoirs" %>
-=======
-<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante" %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,24 +25,10 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-<<<<<<< HEAD
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
 	<%@ include file="entete.jsp" %>
-=======
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-</head>
-
-<body class="hold-transition skin-blue sidebar-mini">
-	<%@ include file="entete2.jsp" %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
   		    <%Cours c = new Cours(); %>
 			<%if(request.getParameter("title")==null){ %>
 			<%c.setTitreCours(courMoocs.getTitreCours()); %>
@@ -75,11 +57,7 @@
 			<div class="col-sm-6">
 				<div class="box box-info">
 					<div class="box-body">
-<<<<<<< HEAD
 					<form method="post" id="ajoutComplement" action="tempon.jsp?video=<%=request.getParameter("video")%>&title=<%=request.getParameter("title")%>" class="live form-horizontal" enctype="multipart/form-data">
-=======
-					<form method="post" id="ajoutComplement" action="controle_complement.jsp?video=<%=request.getParameter("video")%>&&title=<%=request.getParameter("title")%>" class="live form-horizontal" enctype="multipart/form-data">
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 						<div class="form-group">
 						<label for="inputName3" class="col-sm-2 control-label">  </label>
 							<div class="col-xs-6">

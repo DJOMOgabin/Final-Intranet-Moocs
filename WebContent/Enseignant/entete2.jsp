@@ -35,16 +35,10 @@
 
                 <p>
                    <%=teacher.getLogin() %> - Enseignant
-<<<<<<< HEAD
                   <small id="heure"></small>
                 </p>
               </li>
               <%@include file="../real-time.jsp"%>
-=======
-                  <small><%=teacher.getHeureActuelle() %></small>
-                </p>
-              </li>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
               <!-- Menu Body -->
               <!-- Menu Footer-->
               <li class="user-footer">

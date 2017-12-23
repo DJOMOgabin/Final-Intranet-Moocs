@@ -18,23 +18,10 @@
    chrono.setTempsRestant(chrono.getTempsRestant()-(chrono.getDateFin()-chrono.getDateDebut()));
    //chrono.setJour();
    
-<<<<<<< HEAD
    chrono.enregistrerSession(chrono);
    chrono.vide();
    //session.removeAttribute("user");
    session.invalidate(); 
-=======
-   System.out.println("valeur du chrono: "+chrono.toString());
-   chrono.enregistrerSession(chrono);
-   chrono.vide();
-   session.removeAttribute("user");
-   session.invalidate();
-   
-   System.out.println("la session "+session.getId()+" fini et verification de "+chrono.toString());
-   /*if(session.isNew())
-   { System.out.println("la session est nouvelle!");*/
-   
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 %>
 <jsp:forward page="go.jsp"/>
 </html>

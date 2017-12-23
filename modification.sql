@@ -27,3 +27,9 @@ ALTER TABLE corresp_divers_etudiant ADD CONSTRAINT cas12 foreign key (idetudiant
 ALTER TABLE corresp_divers_etudiant ADD CONSTRAINT cas13 foreign key (iddivers) REFERENCES divers(iddivers) ON DELETE CASCADE;
 
 ALTER TABLE cours ADD bloquer numeric(2) default 1;
+
+ALTER TABLE etd_cours ADD CONSTRAINT cas14 foreign key (idcours) REFERENCES cours(idcours) ON DELETE CASCADE;
+
+ALTER TABLE etd_cours ADD CONSTRAINT cas15 foreign key (idetudiant) REFERENCES etudiant(idetudiant) ON DELETE CASCADE;
+
+

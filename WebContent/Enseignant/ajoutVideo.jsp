@@ -1,11 +1,7 @@
 <%if(session.getAttribute("enseignant")==null){%><jsp:forward page="../home.jsp?page=index.jsp"/><%}else{ %>
 <%@ include file = "../WEB-INF/jspf/bean/teacher.jspf"%>
 <%@ include file= "/WEB-INF/jspf/bean/courMoocs.jspf" %>
-<<<<<<< HEAD
 <%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante,Modele.Devoirs" %>
-=======
-<%@ page import = "java.util.ArrayList, Modele.Cours, Modele.constante" %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,29 +23,12 @@
   <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
-<<<<<<< HEAD
   <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
 
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
 	<%@ include file="entete.jsp" %>
-=======
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-</head>
-
-<body class="hold-transition skin-blue sidebar-mini">
-	<%@ include file="entete2.jsp" %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
   		    
   		    <%Cours c = new Cours(); %>
 			<%if(request.getParameter("title")==null){ %>
@@ -258,21 +237,11 @@ $().toastmessage('showSuccessToast', "Vidéo d'introduction intégrée avec succès.
 	 			document.getElementById("videoupload").innerHTML= xml.responseText;
 	 		}
 	 	}
-<<<<<<< HEAD
-=======
-
-	 	
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	 	
 	 	xml.open("GET","video.jsp?semaine="+document.getElementById("idsemaine").value,false);
 	 	xml.send();
 	}
-<<<<<<< HEAD
     
-=======
-
-
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     function remove(id)
     {
         alert('id');
@@ -280,11 +249,6 @@ $().toastmessage('showSuccessToast', "Vidéo d'introduction intégrée avec succès.
     	control.replaceWith( control.val('').clone( true ) );
     	$("#r"+id).css("display","none");
     }
-<<<<<<< HEAD
-=======
-    
-	
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 
 	function change(id)
 	{
@@ -297,10 +261,6 @@ $().toastmessage('showSuccessToast', "Vidéo d'introduction intégrée avec succès.
 	 	{
 	 		xml = new ActiveXObject("Microsoft.XMLHTTP");
 	 	}
-<<<<<<< HEAD
-=======
-
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	 	xml.onreadystatechange= function()
 	 	{
 	 		if(xml.readyState==4 && xml.status==200)
@@ -308,25 +268,10 @@ $().toastmessage('showSuccessToast', "Vidéo d'introduction intégrée avec succès.
 	 			document.getElementById("place"+id).innerHTML= xml.responseText;
 	 		}
 	 	}
-<<<<<<< HEAD
 	 	var tab = $(":file");
 	 	xml.open("GET","new.jsp?id="+id,false);
 	 	xml.send();
 	}
-=======
-
-	 	var tab = $(":file");
-	 	//alert(tab.val());
-
-	 	
-	 	
-	 	xml.open("GET","new.jsp?id="+id,false);
-	 	xml.send();
-
-	}
-	
-
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     </script>
 
 </body>

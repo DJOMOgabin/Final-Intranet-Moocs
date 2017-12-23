@@ -45,10 +45,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <h4><i class="icon fa fa-info-circle"></i> Ajouter un enseignant  <i class="fa fa-user"></i> </h4>
                 Veuillez remplir les informations sur l'enseignant  , puis cliquez sur <b> Cr&eacute;er </b>
-<<<<<<< HEAD
 				<div class="pull-right">Ne pas mettre d'<b style="color:red;">Apostrophe</b> dans le nom et prénom de enseignant.</div>
-=======
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
          </div>
 		</div>
 		</div>
@@ -190,44 +187,14 @@ $.ajax({
 });
 
 });
-<<<<<<< HEAD
 
 <%@include file="accent.jsp"%>
 		function chiffrer(){
 		  //On chiffre tous les champs pour éviter les problèmes d'encodage avant d'envoyer dans la base de données
-=======
-		String.prototype.sansAccent = function(){
-		    var accent = [
-		        /[\300-\306]/g, /[\340-\346]/g, // A, a
-		        /[\310-\313]/g, /[\350-\353]/g, // E, e
-		        /[\314-\317]/g, /[\354-\357]/g, // I, i
-		        /[\322-\330]/g, /[\362-\370]/g, // O, o
-		        /[\331-\334]/g, /[\371-\374]/g, // U, u
-		        /[\321]/g, /[\361]/g, // N, n
-		        /[\307]/g, /[\347]/g, // C, c
-		    ];
-		    var noaccent = ['A','a','E','e','I','i','O','o','U','u','N','n','C','c'];
-		     
-		    var str = this;
-		    for(var i = 0; i < accent.length; i++){
-		        str = str.replace(accent[i], noaccent[i]);
-		    }
-		     
-		    return str;
-		}
-
-		function chiffrer(){
-		  //On chiffre tous les champs pour éviter les problèmes d'encodage avant d'envoyer dans la base de données
-
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		  $('#name').val($('#name').val().sansAccent());
 		  $('#prenom').val($('#prenom').val().sansAccent());
 		  return true;
 		}
-<<<<<<< HEAD
-=======
-			    
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	    </script>
 
 </body>

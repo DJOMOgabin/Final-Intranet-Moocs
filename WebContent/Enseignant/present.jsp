@@ -5,23 +5,6 @@
 <%@ page import = "java.util.ArrayList, Modele.Cours, forum.OutilsChaine,Modele.constante,Modele.Devoirs" contentType="text/html;charset=UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-=======
-<%
-	if(request.getParameter("title")!=null)
-	{
- 
-		String title = request.getParameter("title");
-		Cours cours = new Cours(); 
-		if(request.getParameter("envoie")!=null && request.getParameter("envoie").length()>0)
-		{
-			cours.setTitreCours(title);	
-		}else{
-		cours.setTitreCours(new String(title.getBytes("ISO-8859-1"),"UTF-8"));
-		}
-		//System.out.println(new String(title.getBytes("ISO-8859-1"),"UTF-8")+"\n"+cours.getNombreSemainesCoursBD());
-%>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,12 +36,9 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">	
 	<%@ include file="entete.jsp" %>
-<<<<<<< HEAD
 <%
 Cours cours = courMoocs;
 %>
-=======
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 	 <section class="content">
      	<!-- Presentation du titre et du logo -->
      	<div class="row">
@@ -164,11 +144,7 @@ Cours cours = courMoocs;
         <span class="pull-right"><a href="../cours/video/<%=video%>" style="margin-right:2px;" download="<%=cours.getTitreCours()%>.Semaine-<%=(i+1)%>.video<%=(compteur+1)%>" title="Telecharger cette video" type="button" class="btn btn-flat btn-success"><i class="fa fa-huge fa-download"></i></a></span> 
 	    <span class="pull-right"><a href="#" onclick="supprime('<%=video%>','<%=cours.getId()%>');" style="margin-right:2px;" title="Supprimer cette video" type="button" class="btn btn-flat btn-danger"><i class="fa fa-huge fa-remove"></i></a></span>
 			
-<<<<<<< HEAD
         <h3 class="timeline-header"><a href="presentResour.jsp?video=<%=video%>&title=<%=cours.getTitreCours()%>&semaine=<%=(i+1)%>"><%=video %></a> </h3>
-=======
-        <h3 class="timeline-header"><a href="presentResour.jsp?video=<%=video%>&&title=<%=cours.getTitreCours()%>&&semaine=<%=(i+1)%>"><%=video %></a> </h3>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 
          <div class="timeline-body">
             <b> Compl&eacute;ments associ&eacute; à cette vid&eacute;o</b>
@@ -345,11 +321,7 @@ function supprime(nomvideo,idcours)
 {
 		
 		
-<<<<<<< HEAD
 		var supp = confirm('Voulez vous vraiment supprimer cette video ?');
-=======
-		var supp = confirm('Voulez vous vraiment supprimez cette video ?');
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		if(supp == true)
 		{
 				window.location.href="delete.jsp?type=video&&video="+nomvideo+"&&idcours="+idcours;	
@@ -360,11 +332,7 @@ function supprime(nomvideo,idcours)
 
 function supprimeComplement(nomComplement,idcours)
 {
-<<<<<<< HEAD
 		var supp = confirm('Voulez vous vraiment supprimer ce complement ?');
-=======
-		var supp = confirm('Voulez vous vraiment supprimez ce complement ?');
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		if(supp == true)
 		{
 			window.location.href="delete.jsp?type=complement&&video="+nomComplement+"&&idcours="+idcours;
@@ -373,11 +341,7 @@ function supprimeComplement(nomComplement,idcours)
 
 function supprime2(nomvideo, idcours)
 {
-<<<<<<< HEAD
 		var supp = confirm('Voulez vous vraiment supprimer cette exercice ?');
-=======
-		var supp = confirm('Voulez vous vraiment supprimez cette exercice ?');
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		if(supp==true)
 		{
 			window.location.href="delete.jsp?type=exercice&&exercice="+nomvideo+"&&idcours="+idcours;
@@ -394,7 +358,3 @@ $('#description').readmore({
 
 </html>
 <%}%>
-<<<<<<< HEAD
-=======
-<%}%>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b

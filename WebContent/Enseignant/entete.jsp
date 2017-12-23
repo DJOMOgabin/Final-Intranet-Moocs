@@ -1,10 +1,6 @@
 
-<<<<<<< HEAD
 	<%@page import="Modele.Cours"%>
 <div class="wrapper">
-=======
-	<div class="wrapper">
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
 		<header class="main-header">
 
     <!-- Logo -->
@@ -41,18 +37,10 @@
 
                 <p>
                    <%=teacher.getLogin() %> - Enseignant
-<<<<<<< HEAD
                   <small id="heure"></small>
                 </p>
               </li>
               <%@include file="../real-time.jsp"%>
-=======
-                  <small><%=teacher.getHeureActuelle() %></small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <!-- Menu Footer-->
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
               <li class="user-footer">
                 
                 <div class="pull-right">
@@ -92,12 +80,7 @@
           <a href="#">
             <i class="fa fa-book"></i>
             <span>Cours </span>
-<<<<<<< HEAD
             <span class="label label-primary pull-right"><%=teacher.getNombreCours()%></span> 
-=======
-            <span class="label label-primary pull-right"><%=teacher.getNombreCours()%></span>
-             
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
           </a>
           <ul class="treeview-menu">
             <li><a href="ajoutCours.jsp"><i class="fa fa-circle-o"></i> </i> Ajouter un cours</a></li>
@@ -106,7 +89,6 @@
         </li>
         
          <li>
-<<<<<<< HEAD
           <a href="listeDevoir.jsp?title=<%= request.getParameter("title")%>&del=false&admin=">
             <i class="fa fa-edit"></i>
             <span>Les devoirs </span>         	
@@ -116,38 +98,18 @@
             %>             	
             <span class="label label-primary pull-right"><%=devoir.getNombre()%></span>
           	<%} %>             	
-=======
-          <a href="listeDevoir.jsp?title=<%= request.getParameter("title")%>&del=false">
-            <i class="fa fa-book"></i>
-            <span>Les devoirs </span>
-            <%
-            	Devoirs devoir = new Devoirs(request.getParameter("title"),false,true);
-            	if(devoir.getNombre()!=0){
-            %>
-            <span class="label label-primary pull-right"><%=devoir.getNombre()%></span>
-          	<%} %>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
           </a>
         </li>
         
         <li>
           <a href="listeEtd.jsp">
             <i class="fa fa-users"></i>
-<<<<<<< HEAD
             <span>Mes &Eacute;tudiants </span>  
             <span class="label label-primary pull-right"><%=teacher.getNombreEtdIns()%></span> 
           </a>
         </li>
         <li>
           <a href="ForumMenu.jsp?title=<%=request.getParameter("title")%>">
-=======
-            <span>Mes &Eacute;tudiants </span>
-            <span class="label label-primary pull-right"><%=teacher.getNombreEtdIns()%></span>
-          </a>
-        </li>
-        <li>
-          <a href="ForumMenu.jsp?title=<%= request.getParameter("title")%>">
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
             <i class="fa fa-comments"></i>
             <span>Le Forum </span>
           </a>
@@ -157,7 +119,6 @@
     </section>
 
   </aside>
-<<<<<<< HEAD
   		    <%//Cours c = new Cours(); %>
 			<%courMoocs.setTitreCours(request.getParameter("title"));
 			/*if(request.getParameter("title")==null){
@@ -165,27 +126,9 @@
 			}else{
 				c.setTitreCours(new String(request.getParameter("title").getBytes("ISO-8859-1"),"UTF-8"));
 			}*/%>
-=======
-  		    
-  		    <%Cours c = new Cours(); %>
-			<%if(request.getParameter("title")==null){ %>
-			<%c.setTitreCours(courMoocs.getTitreCours()); %>
-			<%}else{ %>
-			<%courMoocs.setTitreCours(request.getParameter("title")); %>
-			<%c = new Cours(); c.setTitreCours(new String(request.getParameter("title").getBytes("ISO-8859-1"),"UTF-8")); %>
-			<%}%>
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
   <div class="content-wrapper">
    <section class="content-header">
       <h1>
         <small>Version 2.0</small>
       </h1>
-<<<<<<< HEAD
-=======
-      <!--ol class="breadcrumb">
-        <li><a href="index.jsp#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="present.jsp#"><i class="fa"></i>Tableau de bord</a></li>
-        <li class="active">Liste des évaluations</li>
-      </ol-->
->>>>>>> 647841db7d091c842900a7c18b2079aeb8d6ee5b
     </section>
