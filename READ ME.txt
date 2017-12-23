@@ -1,0 +1,13 @@
+Install mysql on your machine
+execute the file "intranet_moocs.sql" and "modification.sql" respectly
+The default password and username values are "root", but to change
+go to the "config.djo" file into "WebContent" and set the mysql username and password
+also go to the file "hibernate.cfg.xml" in "src" and change the password and username
+Install apache tomcat7 or more
+open the current project with eclipse
+transform the folder into a .war file
+drop the .war file into tomcat's "webapps"
+launch tomcat
+access his login page in your browser through the link "localhost:8080/"
+launch your .war application
+enjoy
